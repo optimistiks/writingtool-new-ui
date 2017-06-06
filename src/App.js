@@ -5,11 +5,9 @@ import RaisedButton from 'material-ui/RaisedButton'
 import FlatButton from 'material-ui/FlatButton'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
-import transitions from 'material-ui/styles/transitions'
 import AppBar from 'material-ui/AppBar'
 import RemoveRedEye from 'material-ui/svg-icons/image/remove-red-eye';
-import PersonAdd from 'material-ui/svg-icons/social/person-add';
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
+import { ToolbarGroup, ToolbarSeparator } from 'material-ui/Toolbar';
 import IconMenu from 'material-ui/IconMenu';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import AssIcon from 'material-ui/svg-icons/action/accessibility';
@@ -18,12 +16,29 @@ import AccCircleIcon from 'material-ui/svg-icons/action/account-circle';
 import AspectRatioIcon from 'material-ui/svg-icons/action/aspect-ratio';
 import IconButton from 'material-ui/IconButton';
 import { List, ListItem, makeSelectable } from 'material-ui/List';
+import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
 import Subheader from 'material-ui/Subheader';
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
+
+import HomeIcon from 'material-ui/svg-icons/action/home';
+import ListIcon from 'material-ui/svg-icons/action/list';
+import ViewModuleIcon from 'material-ui/svg-icons/action/view-module';
+import ViewStreamIcon from 'material-ui/svg-icons/action/view-stream';
+import ViewListIcon from 'material-ui/svg-icons/action/view-list';
+import SearchIcon from 'material-ui/svg-icons/action/search';
+import BookmarkIcon from 'material-ui/svg-icons/action/bookmark';
+import CheckCircleIcon from 'material-ui/svg-icons/action/check-circle';
+
+import AccountCircleIcon from 'material-ui/svg-icons/action/account-circle';
+import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
+import SettingsIcon from 'material-ui/svg-icons/action/settings';
+import HelpIcon from 'material-ui/svg-icons/action/help-outline';
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import MediaQuery from 'react-responsive'
+
+import hipsum from 'lorem-hipsum'
 
 const SelectableList = makeSelectable(List)
 
@@ -128,7 +143,7 @@ function NavBarControlsSmall (props, context) {
   const { appBar } = context.muiTheme
   return (
     <ToolbarGroup style={{ height: `${appBar.height}px` }}>
-      <IconButton><AspectRatioIcon color={appBar.textColor}/></IconButton>
+      <IconButton><NotificationsIcon color={appBar.textColor}/></IconButton>
       <IconMenu
         iconButtonElement={
           <IconButton><MoreVertIcon color={appBar.textColor}/></IconButton>
@@ -138,8 +153,8 @@ function NavBarControlsSmall (props, context) {
       >
         <MenuItem primaryText="New document"/>
         <MenuItem primaryText="Writer profile"/>
-        <MenuItem primaryText="Settings"/>
         <MenuItem primaryText="Help"/>
+        <MenuItem primaryText="Settings"/>
         <MenuItem primaryText="Sign out"/>
       </IconMenu>
     </ToolbarGroup>
@@ -157,10 +172,9 @@ function NavBarControlsLarge (props, context) {
   return (
     <ToolbarGroup style={{ height: `${appBar.height}px` }}>
       <RaisedButton label="New Document"/>
-      <IconButton><AssIcon color={appBar.textColor}/></IconButton>
-      <IconButton><AccBalIcon color={appBar.textColor}/></IconButton>
-      <IconButton><AccCircleIcon color={appBar.textColor}/></IconButton>
-      <IconButton><AspectRatioIcon color={appBar.textColor}/></IconButton>
+      <IconButton><AccountCircleIcon color={appBar.textColor}/></IconButton>
+      <IconButton><NotificationsIcon color={appBar.textColor}/></IconButton>
+      <IconButton><HelpIcon color={appBar.textColor} title='Help'/></IconButton>
       <ToolbarSeparator />
       <IconMenu
         iconButtonElement={
@@ -169,6 +183,7 @@ function NavBarControlsLarge (props, context) {
         targetOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
       >
+        <MenuItem primaryText="Settings"/>
         <MenuItem primaryText="Sign out"/>
       </IconMenu>
     </ToolbarGroup>
@@ -193,68 +208,102 @@ function Sidebar (props, context) {
       open={props.isOpened}
       docked={props.isDocked}
       containerStyle={{ top: `${appBar.height}px` }}
-      zDepth={2}
+      zDepth={1}
     >
-      <SelectableList value={3}>
+      <SelectableList value={5}>
+        <Subheader>Pages</Subheader>
         <ListItem
           value={1}
-          primaryText="Brendan Lim"
-          leftIcon={<RemoveRedEye />}
+          primaryText="Home"
+          leftIcon={<HomeIcon />}
         />
         <ListItem
           value={2}
-          primaryText="Kerem Suer"
-          leftIcon={<RemoveRedEye />}
+          primaryText="Documents"
+          leftIcon={<ViewModuleIcon />}
         />
         <ListItem
           value={3}
-          primaryText="Eric Hoffman"
-          leftIcon={<RemoveRedEye />}
+          primaryText="Tasks"
+          leftIcon={<ListIcon />}
         />
         <ListItem
           value={4}
-          primaryText="Raquel Parrado"
-          leftIcon={<RemoveRedEye />}
+          primaryText="Projects"
+          leftIcon={<ViewStreamIcon />}
+        />
+        <ListItem
+          primaryText="Job search"
+          primaryTogglesNestedList
+          leftIcon={<SearchIcon />}
+          nestedItems={[
+            <ListItem
+              value={5}
+              primaryText="Job feed"
+              leftIcon={<ViewListIcon />}
+            />,
+            <ListItem
+              value={6}
+              primaryText="Bookmarks"
+              leftIcon={<BookmarkIcon />}
+            />,
+            <ListItem
+              value={7}
+              primaryText="Applied to"
+              leftIcon={<CheckCircleIcon />}
+            />,
+          ]}
         />
       </SelectableList>
     </Drawer>
   )
 }
 
-/* Content */
+/* Card */
 
-function Content () {
-  const card = (
-    <div className='col-sm-6 col-md-4'>
+function DocumentCard () {
+  return (
+    <div className='col-xs-12'>
       <Card style={{ marginBottom: '30px' }}>
-        <CardTitle title="Card title" subtitle="Card subtitle"/>
-        <CardText>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-          Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-          Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-        </CardText>
+        <div className='row'>
+          <div className='col-xs-9'>
+            <CardTitle title={hipsum({ count: 1, units: 'sentences', sentenceLowerBound: 1, sentenceUpperBound: 5 })} />
+          </div>
+          <div className='col-xs-3 text-right'>
+            <IconMenu
+              iconButtonElement={<IconButton style={{ paddingBottom: '0px' }}><MoreVertIcon /></IconButton>}
+              anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+              targetOrigin={{horizontal: 'right', vertical: 'top'}}
+            >
+              <MenuItem primaryText="Delete" />
+            </IconMenu>
+          </div>
+        </div>
         <CardActions>
-          <FlatButton label="Action1"/>
-          <FlatButton label="Action2"/>
+          <FlatButton label="Edit"/>
         </CardActions>
       </Card>
     </div>
   )
+}
 
+/* Content */
+
+function Content () {
   return (
     <div className='container-fluid'>
       <div className='row'>
         <div className='col-xs-12'>
           <h2>Documents</h2>
           <div className='row'>
-            {card}
-            {card}
-            {card}
-            {card}
-            {card}
-            {card}
-            {card}
+            <DocumentCard />
+            <DocumentCard />
+            <DocumentCard />
+            <DocumentCard />
+            <DocumentCard />
+            <DocumentCard />
+            <DocumentCard />
+            <DocumentCard />
           </div>
         </div>
       </div>
