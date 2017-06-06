@@ -1,11 +1,3 @@
 body {
     background: #F5F5F5;
 }
-
-.flex-container {
-    display: flex
-}
-
-.sidebar__container {
-    margin-right: 15px;
-}
