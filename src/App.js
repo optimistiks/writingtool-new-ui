@@ -33,6 +33,8 @@ import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import HelpIcon from 'material-ui/svg-icons/action/help-outline';
 
+import EditIcon from 'material-ui/svg-icons/editor/mode-edit';
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
@@ -72,17 +74,17 @@ class App extends Component {
         <MediaQuery maxWidth={767}>
           <NavBar toggleSidebar={this.toggleSidebar} ControlsComponent={NavBarControlsSmall} />
           <Sidebar isOpened={isSidebarOpened} isDocked={false} />
-          <ContentWrapper marginLeft={0} />
+          <ContentWrapper />
         </MediaQuery>
         <MediaQuery minWidth={768} maxWidth={1199}>
           <NavBar toggleSidebar={this.toggleSidebar} ControlsComponent={NavBarControlsLarge} />
           <Sidebar isOpened={isSidebarOpened} isDocked={false} />
-          <ContentWrapper marginLeft={0} />
+          <ContentWrapper />
         </MediaQuery>
         <MediaQuery minWidth={1200}>
           <NavBar ControlsComponent={NavBarControlsLarge} />
           <Sidebar isOpened={true} isDocked />
-          <ContentWrapper marginLeft={drawer.width + spacing.desktopGutterLess} />
+          <ContentWrapper moveForSidebar={true} />
         </MediaQuery>
       </div>
     );
@@ -261,26 +263,28 @@ function Sidebar (props, context) {
 
 /* Card */
 
-function DocumentCard () {
+DocumentCard.contextTypes = {
+  muiTheme: PropTypes.object.isRequired
+}
+
+function DocumentCard (props, context) {
   return (
-    <div className='col-xs-12'>
-      <Card style={{ marginBottom: '30px' }}>
-        <div className='row'>
-          <div className='col-xs-9'>
+    <div className='col-xs-12 col-sm-6 col-md-4'>
+      <Card style={{ marginBottom: context.muiTheme.spacing.desktopGutterLess }}>
+        <div className='row' style={{ marginRight: 0 }}>
+          <div className='col-xs'>
             <CardTitle title={hipsum({ count: 1, units: 'sentences', sentenceLowerBound: 1, sentenceUpperBound: 5 })} />
           </div>
-          <div className='col-xs-3 text-right'>
-            <IconMenu
-              iconButtonElement={<IconButton style={{ paddingBottom: '0px' }}><MoreVertIcon /></IconButton>}
-              anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-              targetOrigin={{horizontal: 'right', vertical: 'top'}}
-            >
-              <MenuItem primaryText="Delete" />
-            </IconMenu>
-          </div>
+          <IconMenu
+            iconButtonElement={<IconButton style={{ paddingBottom: '0px' }}><MoreVertIcon /></IconButton>}
+            anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+            targetOrigin={{horizontal: 'right', vertical: 'top'}}
+          >
+            <MenuItem primaryText="Delete" />
+          </IconMenu>
         </div>
         <CardActions>
-          <FlatButton label="Edit"/>
+          <FlatButton label="Edit" icon={<EditIcon />} primary />
         </CardActions>
       </Card>
     </div>
@@ -291,21 +295,17 @@ function DocumentCard () {
 
 function Content () {
   return (
-    <div className='container-fluid'>
+    <div>
+      <h2>Documents</h2>
       <div className='row'>
-        <div className='col-xs-12'>
-          <h2>Documents</h2>
-          <div className='row'>
-            <DocumentCard />
-            <DocumentCard />
-            <DocumentCard />
-            <DocumentCard />
-            <DocumentCard />
-            <DocumentCard />
-            <DocumentCard />
-            <DocumentCard />
-          </div>
-        </div>
+        <DocumentCard />
+        <DocumentCard />
+        <DocumentCard />
+        <DocumentCard />
+        <DocumentCard />
+        <DocumentCard />
+        <DocumentCard />
+        <DocumentCard />
       </div>
     </div>
   )
@@ -314,7 +314,11 @@ function Content () {
 /* ContentWrapper */
 
 ContentWrapper.propTypes = {
-  marginLeft: PropTypes.number.isRequired
+  moveForSidebar: PropTypes.bool
+}
+
+ContentWrapper.defaultProps = {
+  moveForSidebar: false
 }
 
 ContentWrapper.contextTypes = {
@@ -322,10 +326,18 @@ ContentWrapper.contextTypes = {
 }
 
 function ContentWrapper (props, context) {
-  const { marginLeft } = props
-  const { appBar } = context.muiTheme
+  const { moveForSidebar } = props
+  const { appBar, drawer, spacing } = context.muiTheme
+  const topPadding = appBar.height
+  const leftPadding = moveForSidebar ? drawer.width + spacing.desktopGutter : spacing.desktopGutter
+  const rightPadding = spacing.desktopGutter
+  const style = {
+    padding: `${topPadding}px ${rightPadding}px 0px ${leftPadding}px`
+  }
   return (
-    <div style={{ marginTop: `${appBar.height}px`, marginLeft: `${marginLeft}px` }}>
+    <div
+      style={style}
+    >
       <Content />
     </div>
 
