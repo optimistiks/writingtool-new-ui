@@ -33,6 +33,7 @@ import MediaQuery from 'react-responsive'
 
 import DocumentsPage from './DocumentsPage'
 import TasksPage from './TasksPage'
+import ProjectsPage from './ProjectsPage'
 
 const SelectableList = makeSelectable(List)
 
@@ -260,6 +261,7 @@ function Content () {
       <Route exact path='/' component={DocumentsPage}/>
       <Route exact path='/documents' component={DocumentsPage}/>
       <Route exact path='/tasks' component={TasksPage}/>
+      <Route exact path='/projects' component={ProjectsPage}/>
     </Switch>
   )
 }
