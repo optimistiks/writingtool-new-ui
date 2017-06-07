@@ -9,6 +9,9 @@ const muiTheme = getMuiTheme({
     drawer: 1200,
     drawerOverlay: 1100
   },
+  editorToolbar: {
+    height: 100
+  }
 });
 
 MuiTheme.propTypes = {

@@ -42,7 +42,7 @@ function ProjectCard (props, context) {
           </IconMenu>
         </div>
         <CardActions>
-          <FlatButton label="Open" primary />
+          <FlatButton label="Open" primary/>
         </CardActions>
       </Card>
     </div>
