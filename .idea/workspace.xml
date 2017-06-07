@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ab12974-aab5-46b7-9a55-bab8b0375c4c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/test-materialui.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/EditorPage.js" afterPath="$PROJECT_DIR$/src/EditorPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MuiTheme.js" afterPath="$PROJECT_DIR$/src/MuiTheme.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProjectsPage.js" afterPath="$PROJECT_DIR$/src/ProjectsPage.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -432,7 +422,7 @@
       <option name="presentableId" value="Default" />
       <updated>1496741827082</updated>
       <workItem from="1496741828478" duration="19981000" />
-      <workItem from="1496822821537" duration="25024000" />
+      <workItem from="1496822821537" duration="25042000" />
     </task>
     <task id="LOCAL-00001" summary="Responsiveness">
       <created>1496752518138</created>
@@ -469,11 +459,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496849937069</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Editor page">
+      <created>1496855508039</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1496855508040</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45005000" />
+    <option name="totallyTimeSpent" value="45023000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1368" height="780" extended-state="6" />
