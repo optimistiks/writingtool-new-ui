@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
+import { Switch, Route, BrowserRouter } from 'react-router-dom'
 
 import RaisedButton from 'material-ui/RaisedButton'
-import FlatButton from 'material-ui/FlatButton'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import AppBar from 'material-ui/AppBar'
-import RemoveRedEye from 'material-ui/svg-icons/image/remove-red-eye';
 import { ToolbarGroup, ToolbarSeparator } from 'material-ui/Toolbar';
 import IconMenu from 'material-ui/IconMenu';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import AssIcon from 'material-ui/svg-icons/action/accessibility';
-import AccBalIcon from 'material-ui/svg-icons/action/account-balance';
-import AccCircleIcon from 'material-ui/svg-icons/action/account-circle';
-import AspectRatioIcon from 'material-ui/svg-icons/action/aspect-ratio';
 import IconButton from 'material-ui/IconButton';
 import { List, ListItem, makeSelectable } from 'material-ui/List';
-import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
 import Subheader from 'material-ui/Subheader';
 
 import HomeIcon from 'material-ui/svg-icons/action/home';
@@ -30,17 +24,15 @@ import CheckCircleIcon from 'material-ui/svg-icons/action/check-circle';
 
 import AccountCircleIcon from 'material-ui/svg-icons/action/account-circle';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
-import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import HelpIcon from 'material-ui/svg-icons/action/help-outline';
-
-import EditIcon from 'material-ui/svg-icons/editor/mode-edit';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import MediaQuery from 'react-responsive'
 
-import hipsum from 'lorem-hipsum'
+import DocumentsPage from './DocumentsPage'
+import TasksPage from './TasksPage'
 
 const SelectableList = makeSelectable(List)
 
@@ -64,10 +56,7 @@ class App extends Component {
   }
 
   render () {
-
-
     console.log('muiTheme', this.context.muiTheme)
-    const { appBar, drawer, spacing, zIndex } = this.context.muiTheme
     const { isSidebarOpened } = this.state
     return (
       <div>
@@ -101,9 +90,11 @@ const muiTheme = getMuiTheme({
 
 function MuiThemeApp (props) {
   return (
-    <MuiThemeProvider muiTheme={muiTheme}>
-      <App {...props} />
-    </MuiThemeProvider>
+    <BrowserRouter>
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <App {...props} />
+      </MuiThemeProvider>
+    </BrowserRouter>
   )
 }
 export default MuiThemeApp;
@@ -261,53 +252,15 @@ function Sidebar (props, context) {
   )
 }
 
-/* Card */
-
-DocumentCard.contextTypes = {
-  muiTheme: PropTypes.object.isRequired
-}
-
-function DocumentCard (props, context) {
-  return (
-    <div className='col-xs-12 col-sm-6 col-md-4'>
-      <Card style={{ marginBottom: context.muiTheme.spacing.desktopGutterLess }}>
-        <div className='row' style={{ marginRight: 0 }}>
-          <div className='col-xs'>
-            <CardTitle title={hipsum({ count: 1, units: 'sentences', sentenceLowerBound: 1, sentenceUpperBound: 5 })} />
-          </div>
-          <IconMenu
-            iconButtonElement={<IconButton style={{ paddingBottom: '0px' }}><MoreVertIcon /></IconButton>}
-            anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-            targetOrigin={{horizontal: 'right', vertical: 'top'}}
-          >
-            <MenuItem primaryText="Delete" />
-          </IconMenu>
-        </div>
-        <CardActions>
-          <FlatButton label="Edit" icon={<EditIcon />} primary />
-        </CardActions>
-      </Card>
-    </div>
-  )
-}
-
 /* Content */
 
 function Content () {
   return (
-    <div>
-      <h2>Documents</h2>
-      <div className='row'>
-        <DocumentCard />
-        <DocumentCard />
-        <DocumentCard />
-        <DocumentCard />
-        <DocumentCard />
-        <DocumentCard />
-        <DocumentCard />
-        <DocumentCard />
-      </div>
-    </div>
+    <Switch>
+      <Route exact path='/' component={DocumentsPage}/>
+      <Route exact path='/documents' component={DocumentsPage}/>
+      <Route exact path='/tasks' component={TasksPage}/>
+    </Switch>
   )
 }
 
