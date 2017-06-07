@@ -6,7 +6,6 @@ import IconMenu from 'material-ui/IconMenu';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconButton from 'material-ui/IconButton';
 import { Card, CardActions, CardTitle } from 'material-ui/Card';
-import EditIcon from 'material-ui/svg-icons/editor/mode-edit';
 import hipsum from 'lorem-hipsum'
 
 export default function ProjectsPage () {
