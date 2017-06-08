@@ -422,7 +422,7 @@
       <workItem from="1496741828478" duration="19981000" />
       <workItem from="1496822821537" duration="25042000" />
       <workItem from="1496912345681" duration="3021000" />
-      <workItem from="1496918020023" duration="2930000" />
+      <workItem from="1496918020023" duration="2961000" />
     </task>
     <task id="LOCAL-00001" summary="Responsiveness">
       <created>1496752518138</created>
@@ -473,11 +473,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496920942592</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="rm idea">
+      <created>1496920992897</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1496920992897</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50974000" />
+    <option name="totallyTimeSpent" value="51005000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1368" height="780" extended-state="6" />
@@ -515,7 +522,8 @@
     <MESSAGE value="Projects page" />
     <MESSAGE value="Editor page" />
     <MESSAGE value="Editor toolbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Editor toolbar" />
+    <MESSAGE value="rm idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="rm idea" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
