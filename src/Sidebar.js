@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Drawer from 'material-ui/Drawer'
 import { List, ListItem, makeSelectable } from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
+import FontIcon from 'material-ui/FontIcon';
 import HomeIcon from 'material-ui/svg-icons/action/home';
 import ListIcon from 'material-ui/svg-icons/action/list';
 import ViewModuleIcon from 'material-ui/svg-icons/action/view-module';
@@ -75,6 +76,11 @@ export default function Sidebar (props, context) {
               leftIcon={<CheckCircleIcon />}
             />,
           ]}
+        />
+        <ListItem
+          value={8}
+          primaryText="Writer profile"
+          leftIcon={<FontIcon className='material-icons'>account_circle</FontIcon>}
         />
       </SelectableList>
     </Drawer>

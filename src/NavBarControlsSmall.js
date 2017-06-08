@@ -24,7 +24,6 @@ export default function NavBarControlsSmall (props, context) {
         anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
       >
         <MenuItem primaryText="New document"/>
-        <MenuItem primaryText="Writer profile"/>
         <MenuItem primaryText="Help"/>
         <MenuItem primaryText="Settings"/>
         <MenuItem primaryText="Sign out"/>

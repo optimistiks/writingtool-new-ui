@@ -19,7 +19,6 @@ export default function NavBarControlsLarge (props, context) {
   return (
     <ToolbarGroup style={{ height: `${appBar.height}px` }}>
       <RaisedButton label="New Document"/>
-      <IconButton><AccountCircleIcon color={appBar.textColor}/></IconButton>
       <IconButton><NotificationsIcon color={appBar.textColor}/></IconButton>
       <IconButton><HelpIcon color={appBar.textColor} title='Help'/></IconButton>
       <ToolbarSeparator />

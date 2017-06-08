@@ -13,7 +13,7 @@ import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import Divider from 'material-ui/Divider';
 import Chip from 'material-ui/Chip';
-import { greenA200 } from 'material-ui/styles/colors'
+import { greenA200, green100 } from 'material-ui/styles/colors'
 
 import TextField from 'material-ui/TextField';
 import hipsum from 'lorem-hipsum';
@@ -43,13 +43,14 @@ export default function EditorDocumentBar (props, context) {
         <RaisedButton
           label='00:00'
           labelStyle={{ verticalAlign: 'middle' }}
+          style={{ whiteSpace: 'nowrap' }}
           icon={<FontIcon className='material-icons'>play_arrow</FontIcon>}
         />
       </ToolbarGroup>
-      <ToolbarGroup className='col-xs-4' style={{ justifyContent: 'flex-end' }}>
+      <ToolbarGroup className='col-xs-4' style={{ justifyContent: 'flex-end', overflow: 'hidden' }}>
         <Chip style={{ marginRight: `${spacing.desktopGutterMini}px` }}>Characters: 12000</Chip>
         <Chip style={{ marginRight: `${spacing.desktopGutterMini}px` }}>Words: 6000</Chip>
-        <Chip backgroundColor={greenA200}>Saved</Chip>
+        <Chip backgroundColor={green100}>Saved</Chip>
       </ToolbarGroup>
 {/*      <ToolbarGroup>
       </ToolbarGroup>

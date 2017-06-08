@@ -24,8 +24,9 @@ export default function EditorPage (props, context) {
   const { spacing, editorToolbar, appBar } = context.muiTheme
   return (
     <div style={{ marginTop: `${appBar.height}px` }}>
+      <EditorDocumentBar />
       <EditorToolbar style={{ marginBottom: `${spacing.desktopGutterLess}px` }} />
-      <EditorPaper isCentered={false} />
+      <EditorPaper />
     </div>
   )
 /*  return (
