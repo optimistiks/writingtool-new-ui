@@ -15,6 +15,7 @@ import { cyan50 } from 'material-ui/styles/colors'
 import EditorDocumentBar from './EditorDocumentBar'
 import EditorToolbar from './EditorToolbar'
 import EditorPaper from './EditorPaper'
+import EditorGoogleFontsDialog from './EditorGoogleFontsDialog'
 
 EditorPage.contextTypes = {
   muiTheme: PropTypes.object.isRequired
@@ -27,6 +28,7 @@ export default function EditorPage (props, context) {
       <EditorDocumentBar />
       <EditorToolbar style={{ marginBottom: `${spacing.desktopGutterLess}px` }} />
       <EditorPaper />
+      <EditorGoogleFontsDialog isVisible={false} onClose={() => {}} />
     </div>
   )
 /*  return (

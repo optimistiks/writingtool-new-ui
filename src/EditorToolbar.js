@@ -1,19 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
-import FontIcon from 'material-ui/FontIcon';
-import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
 import MenuItem from 'material-ui/MenuItem';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import PrintIcon from 'material-ui/svg-icons/action/print'
-import Popover from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import Divider from 'material-ui/Divider';
+import { Toolbar, ToolbarGroup, ToolbarSeparator } from 'material-ui/Toolbar';
+import GenericPopover from './GenericPopover'
 
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
+const EditorToolbarSeparator = () => <ToolbarSeparator style={{ margin: 0 }} />
 
 EditorToolbar.propTypes = {
   style: PropTypes.object
@@ -28,7 +23,7 @@ export default function EditorToolbar (props) {
         <IconButton iconClassName='material-icons' tooltip='Underlined'>format_underlined</IconButton>
         <IconButton iconClassName='material-icons' tooltip='Strikethrough'>strikethrough_s</IconButton>
 
-        <PopoverExampleSimple
+        <GenericPopover
           buttonElement={<FlatButton label='Headings' />}
         >
           <Menu>
@@ -36,7 +31,7 @@ export default function EditorToolbar (props) {
             <MenuItem primaryText='Heading 2'/>
             <MenuItem primaryText='Subheader'/>
           </Menu>
-        </PopoverExampleSimple>
+        </GenericPopover>
 
         <EditorToolbarSeparator />
 
@@ -47,7 +42,7 @@ export default function EditorToolbar (props) {
         <IconButton iconClassName='material-icons' tooltip='Bulleted list'>format_list_bulleted</IconButton>
         <IconButton iconClassName='material-icons' tooltip='Numbered list'>format_list_numbered</IconButton>
 
-        <PopoverExampleSimple
+        <GenericPopover
           buttonElement={<FlatButton label='Fonts' />}
         >
           <Menu>
@@ -58,7 +53,7 @@ export default function EditorToolbar (props) {
             <Divider />
             <MenuItem primaryText='More Fonts'/>
           </Menu>
-        </PopoverExampleSimple>
+        </GenericPopover>
 
         <EditorToolbarSeparator />
 
@@ -77,61 +72,4 @@ export default function EditorToolbar (props) {
       </ToolbarGroup>
     </Toolbar>
   )
-}
-
-function EditorToolbarSeparator () {
-  return (
-    <ToolbarSeparator style={{ margin: 0 }} />
-  )
-}
-
-
-class PopoverExampleSimple extends React.Component {
-  static propTypes = {
-    children: PropTypes.element.isRequired,
-    buttonElement: PropTypes.element.isRequired
-  }
-
-  constructor (props) {
-    super(props);
-    this.state = {
-      open: false,
-    };
-  }
-
-  handleTouchTap = (event) => {
-    // This prevents ghost click.
-    event.preventDefault();
-
-    this.setState({
-      open: true,
-      anchorEl: event.currentTarget,
-    });
-  };
-
-  handleRequestClose = () => {
-    this.setState({
-      open: false,
-    });
-  };
-
-  render () {
-    const { buttonElement, children } = this.props
-    return (
-      <div>
-        {React.cloneElement(buttonElement, {
-          onTouchTap: this.handleTouchTap
-        })}
-        <Popover
-          open={this.state.open}
-          anchorEl={this.state.anchorEl}
-          anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
-          targetOrigin={{ horizontal: 'left', vertical: 'top' }}
-          onRequestClose={this.handleRequestClose}
-        >
-          {children}
-        </Popover>
-      </div>
-    );
-  }
 }
