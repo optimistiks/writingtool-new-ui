@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ab12974-aab5-46b7-9a55-bab8b0375c4c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.storybook/addons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.storybook/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/EditorToolbar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PopoverSimple.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/stories/Button.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/stories/Welcome.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/stories/index.js" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
@@ -16,9 +9,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/test-materialui.iml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.css" afterPath="$PROJECT_DIR$/src/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="$PROJECT_DIR$/yarn.lock" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -66,8 +56,8 @@
       <file leaf-file-name="EditorToolbar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EditorToolbar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+            <state relative-caret-position="300">
+              <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -432,7 +422,7 @@
       <workItem from="1496741828478" duration="19981000" />
       <workItem from="1496822821537" duration="25042000" />
       <workItem from="1496912345681" duration="3021000" />
-      <workItem from="1496918020023" duration="2829000" />
+      <workItem from="1496918020023" duration="2930000" />
     </task>
     <task id="LOCAL-00001" summary="Responsiveness">
       <created>1496752518138</created>
@@ -476,11 +466,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496855508040</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Editor toolbar">
+      <created>1496920942592</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1496920942592</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50873000" />
+    <option name="totallyTimeSpent" value="50974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1368" height="780" extended-state="6" />
@@ -517,7 +514,8 @@
     <MESSAGE value="Tasks page" />
     <MESSAGE value="Projects page" />
     <MESSAGE value="Editor page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Editor page" />
+    <MESSAGE value="Editor toolbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editor toolbar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -864,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EditorToolbar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        <state relative-caret-position="300">
+          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
           <folding />
         </state>
       </provider>
