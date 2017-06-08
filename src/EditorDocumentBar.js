@@ -27,33 +27,49 @@ EditorDocumentBar.propTypes = {
 export default function EditorDocumentBar (props) {
   return (
     <Toolbar>
-      <ToolbarGroup>
-        <TextField
-          hintText='Document title'
-          defaultValue={hipsum({ count: 1, units: 'sentences' })}
-          fullWidth
-        />
-      </ToolbarGroup>
-      <ToolbarGroup>
-        <RaisedButton
-          label='00:00'
-          labelStyle={{ verticalAlign: 'middle' }}
-          icon={<FontIcon className='material-icons'>play_arrow</FontIcon>}
-        />
-      </ToolbarGroup>
-      <ToolbarGroup>
-        <div className='row middle-xs'>
-          <div className='col-xs'>
-            <div style={{ whiteSpace: 'nowrap' }}>Characters: 12000</div>
-          </div>
-          <div className='col-xs'>
-            <div style={{ whiteSpace: 'nowrap' }}>Words: 6000</div>
-          </div>
-          <div className='col-xs'>
-            <Chip backgroundColor={greenA200}>Saved</Chip>
+      <ToolbarGroup style={{ width: '100%' }}>
+        <div style={{ width: '100%' }}>
+          <div className='row center-xs'>
+            <div className='col-xs-4'>
+              <div>
+                <TextField
+                  hintText='Document title'
+                  defaultValue={hipsum({ count: 1, units: 'sentences' })}
+                  fullWidth
+                />
+              </div>
+            </div>
+            <div className='col-xs-4'>
+              <div>
+                <RaisedButton
+                  label='00:00'
+                  labelStyle={{ verticalAlign: 'middle' }}
+                  icon={<FontIcon className='material-icons'>play_arrow</FontIcon>}
+                />
+              </div>
+            </div>
+            <div className='col-xs-4'>
+              <div>
+                <div className='row middle-xs'>
+                  <div className='col-xs'>
+                    <div style={{ whiteSpace: 'nowrap' }}>Characters: 12000</div>
+                  </div>
+                  <div className='col-xs'>
+                    <div style={{ whiteSpace: 'nowrap' }}>Words: 6000</div>
+                  </div>
+                  <div className='col-xs'>
+                    <Chip backgroundColor={greenA200}>Saved</Chip>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </ToolbarGroup>
+{/*      <ToolbarGroup>
+      </ToolbarGroup>
+      <ToolbarGroup>
+      </ToolbarGroup>*/}
     </Toolbar>
   )
 }
