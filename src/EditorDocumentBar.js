@@ -24,41 +24,32 @@ EditorDocumentBar.propTypes = {
   style: PropTypes.object
 }
 
-export default function EditorDocumentBar (props) {
+EditorDocumentBar.contextTypes = {
+  muiTheme: PropTypes.object.isRequired
+}
+
+export default function EditorDocumentBar (props, context) {
+  const { spacing } = context.muiTheme
   return (
     <Toolbar>
-      <ToolbarGroup style={{ width: '100%' }}>
-        <div className='row center-xs middle-xs' style={{ width: '100%' }}>
-          <div className='col-xs-4'>
-            <TextField
-              hintText='Document title'
-              defaultValue={hipsum({ count: 1, units: 'sentences' })}
-              fullWidth
-            />
-          </div>
-          <div className='col-xs-4'>
-            <RaisedButton
-              label='00:00'
-              labelStyle={{ verticalAlign: 'middle' }}
-              icon={<FontIcon className='material-icons'>play_arrow</FontIcon>}
-            />
-          </div>
-          <div className='col-xs-4'>
-            <div>
-              <div className='row middle-xs end-xs'>
-                <div className='col-xs'>
-                  <div style={{ whiteSpace: 'nowrap' }}>Characters: 12000</div>
-                </div>
-                <div className='col-xs'>
-                  <div style={{ whiteSpace: 'nowrap' }}>Words: 6000</div>
-                </div>
-                <div className='col-xs'>
-                  <Chip backgroundColor={greenA200} style={{ display: 'inline-block' }}>Saved</Chip>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <ToolbarGroup className='col-xs-4'>
+        <TextField
+          hintText='Document title'
+          defaultValue={hipsum({ count: 1, units: 'sentences' })}
+          fullWidth
+        />
+      </ToolbarGroup>
+      <ToolbarGroup className='col-xs-4' style={{ justifyContent: 'center' }}>
+        <RaisedButton
+          label='00:00'
+          labelStyle={{ verticalAlign: 'middle' }}
+          icon={<FontIcon className='material-icons'>play_arrow</FontIcon>}
+        />
+      </ToolbarGroup>
+      <ToolbarGroup className='col-xs-4' style={{ justifyContent: 'flex-end' }}>
+        <Chip style={{ marginRight: `${spacing.desktopGutterMini}px` }}>Characters: 12000</Chip>
+        <Chip style={{ marginRight: `${spacing.desktopGutterMini}px` }}>Words: 6000</Chip>
+        <Chip backgroundColor={greenA200}>Saved</Chip>
       </ToolbarGroup>
 {/*      <ToolbarGroup>
       </ToolbarGroup>
