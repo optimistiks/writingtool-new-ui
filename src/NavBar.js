@@ -4,11 +4,11 @@ import AppBar from 'material-ui/AppBar'
 
 NavBar.propTypes = {
   toggleSidebar: PropTypes.func,
-  ControlsComponent: PropTypes.func.isRequired
+  controlsElement: PropTypes.element.isRequired
 }
 
 export default function NavBar (props) {
-  const { toggleSidebar, ControlsComponent } = props
+  const { toggleSidebar, controlsElement } = props
   return (
     <AppBar
       title='Writing Tool'
@@ -17,7 +17,7 @@ export default function NavBar (props) {
       showMenuIconButton={toggleSidebar != null}
       onLeftIconButtonTouchTap={toggleSidebar}
       iconStyleRight={{ marginTop: '0px' }}
-      iconElementRight={<ControlsComponent />}
+      iconElementRight={controlsElement}
     />
   )
 }

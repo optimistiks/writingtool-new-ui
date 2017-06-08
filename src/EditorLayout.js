@@ -5,7 +5,7 @@ import NavBar from './NavBar'
 import NavBarControlsSmall from './NavBarControlsSmall'
 import NavBarControlsLarge from './NavBarControlsLarge'
 import Sidebar from './Sidebar'
-import EditorContent from './EditorContent'
+import EditorPage from './EditorPage'
 
 EditorLayout.propTypes = {
   isSidebarOpened: PropTypes.bool.isRequired,
@@ -19,13 +19,13 @@ export default function EditorLayout (props) {
   return (
     <div>
       <MediaQuery maxWidth={767}>
-        <NavBar toggleSidebar={toggleSidebar} ControlsComponent={NavBarControlsSmall} />
+        <NavBar toggleSidebar={toggleSidebar} controlsElement={<NavBarControlsSmall />} />
       </MediaQuery>
       <MediaQuery minWidth={768}>
-        <NavBar toggleSidebar={toggleSidebar} ControlsComponent={NavBarControlsLarge} />
+        <NavBar toggleSidebar={toggleSidebar} controlsElement={<NavBarControlsLarge />} />
       </MediaQuery>
       <Sidebar isOpened={isSidebarOpened} isDocked={false} />
-      <EditorContent match={match} />
+      <EditorPage />
     </div>
   )
 }

@@ -17,17 +17,17 @@ export default function AppLayout (props) {
   return (
     <div>
       <MediaQuery maxWidth={767}>
-        <NavBar toggleSidebar={toggleSidebar} ControlsComponent={NavBarControlsSmall} />
+        <NavBar toggleSidebar={toggleSidebar} controlsElement={<NavBarControlsSmall />} />
         <Sidebar isOpened={isSidebarOpened} isDocked={false} />
         <AppContent />
       </MediaQuery>
       <MediaQuery minWidth={768} maxWidth={1199}>
-        <NavBar toggleSidebar={toggleSidebar} ControlsComponent={NavBarControlsLarge} />
+        <NavBar toggleSidebar={toggleSidebar} controlsElement={<NavBarControlsLarge />} />
         <Sidebar isOpened={isSidebarOpened} isDocked={false} />
         <AppContent />
       </MediaQuery>
       <MediaQuery minWidth={1200}>
-        <NavBar ControlsComponent={NavBarControlsLarge} />
+        <NavBar controlsElement={<NavBarControlsLarge />} />
         <Sidebar isOpened={true} isDocked />
         <AppContent moveForSidebar={true} />
       </MediaQuery>

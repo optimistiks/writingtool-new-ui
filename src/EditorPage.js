@@ -9,8 +9,12 @@ import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 import EditIcon from 'material-ui/svg-icons/editor/mode-edit';
 import PlayIcon from 'material-ui/svg-icons/av/play-arrow';
 import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
 import hipsum from 'lorem-hipsum'
 import { cyan50 } from 'material-ui/styles/colors'
+import EditorDocumentBar from './EditorDocumentBar'
+import EditorToolbar from './EditorToolbar'
+import EditorPaper from './EditorPaper'
 
 EditorPage.contextTypes = {
   muiTheme: PropTypes.object.isRequired
@@ -19,12 +23,20 @@ EditorPage.contextTypes = {
 export default function EditorPage (props, context) {
   const { spacing, editorToolbar, appBar } = context.muiTheme
   return (
+    <div style={{ marginTop: `${appBar.height}px` }}>
+      <EditorToolbar style={{ marginBottom: `${spacing.desktopGutterLess}px` }} />
+      <EditorPaper isCentered={false} />
+    </div>
+  )
+/*  return (
     <div>
       <div style={{ padding: `0 ${spacing.desktopGutterLess}px`, background: 'white', margin: 0, height: `${editorToolbar.height}px` }}>
         <div className='row' style={{ cursor: 'pointer' }}>
           <div className='col-xs-12'>
             <EditIcon style={{ width: '18px', height: '18px', float: 'left', marginTop: '0.85em', marginRight: `${spacing.desktopGutterMini}px` }} />
-            <p style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{hipsum({ count: 1, units: 'sentences' })}</p>
+            <p style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+
+            </p>
           </div>
         </div>
         <div className='row'>
@@ -44,5 +56,5 @@ export default function EditorPage (props, context) {
         </div>
       </div>
     </div>
-  )
+  )*/
 }

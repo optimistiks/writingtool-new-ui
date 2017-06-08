@@ -15,9 +15,13 @@ import Divider from 'material-ui/Divider';
 
 import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
 
-export default function EditorToolbar () {
+EditorToolbar.propTypes = {
+  style: PropTypes.object
+}
+
+export default function EditorToolbar (props) {
   return (
-    <Toolbar>
+    <Toolbar style={{ justifyContent: 'center', ...props.style }}>
       <ToolbarGroup firstChild={true}>
         <IconButton iconClassName='material-icons' tooltip='Bold'>format_bold</IconButton>
         <IconButton iconClassName='material-icons' tooltip='Italic'>format_italic</IconButton>
