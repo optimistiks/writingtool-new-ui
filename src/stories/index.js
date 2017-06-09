@@ -76,8 +76,7 @@ storiesOf('EditorToolbar', module)
   .add('default', () => <EditorToolbar />);
 
 storiesOf('EditorPaper', module)
-  .add('centered', () => <EditorPaper />)
-  .add('not centered', () => <EditorPaper isCentered={false}/>);
+  .add('default', () => <EditorPaper />);
 
 storiesOf('EditorDocumentBar', module)
   .add('default', () => <EditorDocumentBar />);
