@@ -14,19 +14,23 @@ import hipsum from 'lorem-hipsum'
 import { red100, purple100, blue100, teal100, lime100, blueGrey100, greenA400 } from 'material-ui/styles/colors'
 import FontIcon from 'material-ui/FontIcon'
 
-EditorTextAnalysisPanel.contextTypes = {
-  muiTheme: PropTypes.object.isRequired
-}
-
 const IssuesSummaryTableRow = ({ text, style }) => (
   <TableRow displayBorder={false} style={style}>
     <TableRowColumn>{text}</TableRowColumn>
   </TableRow>
 )
 
-export default function EditorTextAnalysisPanel () {
+EditorTextAnalysisPanel.contextTypes = {
+  muiTheme: PropTypes.object.isRequired
+}
+
+EditorTextAnalysisPanel.propTypes = {
+  style: PropTypes.object
+}
+
+export default function EditorTextAnalysisPanel (props) {
   return (
-    <Paper style={{ maxWidth: '400px' }}>
+    <Paper style={{ maxWidth: '400px', ...props.style }}>
       <Subheader>Readability score</Subheader>
       <Table
         selectable={false}

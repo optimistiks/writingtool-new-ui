@@ -16,6 +16,7 @@ import EditorDocumentBar from './EditorDocumentBar'
 import EditorToolbar from './EditorToolbar'
 import EditorPaper from './EditorPaper'
 import EditorGoogleFontsDialog from './EditorGoogleFontsDialog'
+import EditorTextAnalysisPanel from './EditorTextAnalysisPanel'
 
 EditorPage.contextTypes = {
   muiTheme: PropTypes.object.isRequired
@@ -28,7 +29,14 @@ export default function EditorPage (props, context) {
     <div style={{ marginTop: `${appBar.height + toolbar.height * 2 + spacing.desktopGutter}px` }}>
       <EditorDocumentBar style={{ position: 'fixed', top: `${appBar.height}px`, left: 0, right: 0 }} />
       <EditorToolbar style={{ position: 'fixed', top: `${appBar.height + toolbar.height}px`, left: 0, right: 0 }} />
-      <EditorPaper style={{ margin: '0 auto' }} />
+      <div className='row' style={{ margin: '0' }}>
+        <div className='col-xs-12 col-sm' style={{ marginBottom: `${spacing.desktopGutter}px`, flex: '0 0 auto' }}>
+          <EditorTextAnalysisPanel />
+        </div>
+        <div className='col-xs-12 col-sm first-sm'>
+          <EditorPaper style={{ margin: '0 auto' }} />
+        </div>
+      </div>
       <EditorGoogleFontsDialog isVisible={false} onClose={() => {}} />
     </div>
   )
