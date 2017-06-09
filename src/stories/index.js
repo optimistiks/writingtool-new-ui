@@ -22,6 +22,7 @@ import GenericPopover from '../GenericPopover'
 import GenericDialog from '../GenericDialog'
 import EditorGoogleFontsDialog from '../EditorGoogleFontsDialog'
 import EditorTextAnalysisPanel from '../EditorTextAnalysisPanel'
+import EditorWordDetailsPanel from '../EditorWordDetailsPanel'
 
 injectTapEventPlugin()
 
@@ -98,3 +99,9 @@ storiesOf('EditorTextAnalysisPanel', module)
   .add('default', () => (
     <EditorTextAnalysisPanel />
   ));
+
+storiesOf('EditorWordDetailsPanel', module)
+  .add('default', () => (
+    <EditorWordDetailsPanel />
+  ));
+
