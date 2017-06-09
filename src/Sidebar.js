@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import { withRouter, Link } from 'react-router-dom'
 import Drawer from 'material-ui/Drawer'
 import { List, ListItem, makeSelectable } from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
@@ -17,14 +18,16 @@ const SelectableList = makeSelectable(List)
 
 Sidebar.propTypes = {
   isOpened: PropTypes.bool.isRequired,
-  isDocked: PropTypes.bool.isRequired
+  isDocked: PropTypes.bool.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 Sidebar.contextTypes = {
   muiTheme: PropTypes.object.isRequired
 }
 
-export default function Sidebar (props, context) {
+function Sidebar (props, context) {
+  console.log('location', props.location)
   const { appBar } = context.muiTheme
   return (
     <Drawer
@@ -33,52 +36,58 @@ export default function Sidebar (props, context) {
       containerStyle={{ top: `${appBar.height}px` }}
       zDepth={1}
     >
-      <SelectableList value={5}>
+      <SelectableList value={props.location.pathname}>
         <Subheader>Pages</Subheader>
         <ListItem
-          value={1}
+          containerElement={<Link to='/'/>}
+          value='/'
           primaryText="Home"
           leftIcon={<HomeIcon />}
         />
         <ListItem
-          value={2}
+          containerElement={<Link to='/documents'/>}
+          value='/documents'
           primaryText="Documents"
           leftIcon={<ViewModuleIcon />}
         />
         <ListItem
-          value={3}
+          containerElement={<Link to='/tasks'/>}
+          value='/tasks'
           primaryText="Tasks"
           leftIcon={<ListIcon />}
         />
         <ListItem
-          value={4}
+          containerElement={<Link to='/projects'/>}
+          value='/projects'
           primaryText="Projects"
           leftIcon={<ViewStreamIcon />}
         />
         <ListItem
+          value={5}
           primaryText="Job search"
           primaryTogglesNestedList
           leftIcon={<SearchIcon />}
           nestedItems={[
             <ListItem
-              value={5}
+              value={6}
               primaryText="Job feed"
               leftIcon={<ViewListIcon />}
             />,
             <ListItem
-              value={6}
+              value={7}
               primaryText="Bookmarks"
               leftIcon={<BookmarkIcon />}
             />,
             <ListItem
-              value={7}
+              value={8}
               primaryText="Applied to"
               leftIcon={<CheckCircleIcon />}
             />,
           ]}
         />
         <ListItem
-          value={8}
+          disabled
+          value={9}
           primaryText="Writer profile"
           leftIcon={<FontIcon className='material-icons'>account_circle</FontIcon>}
         />
@@ -86,3 +95,5 @@ export default function Sidebar (props, context) {
     </Drawer>
   )
 }
+
+export default withRouter(Sidebar)

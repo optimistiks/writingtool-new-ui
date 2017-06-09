@@ -18,17 +18,13 @@ export default function TasksPage () {
 
 
   const rightIconMenu = (
-    <Toolbar style={{ top: '50%', transform: 'translate(0, -50%)', backgroundColor: 'transparent' }}>
-      <ToolbarGroup firstChild={true}>
-        <IconMenu
-          anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
-          targetOrigin={{ horizontal: 'right', vertical: 'top' }}
-          iconButtonElement={iconButtonElement}
-        >
-          <MenuItem>Delete</MenuItem>
-        </IconMenu>
-      </ToolbarGroup>
-    </Toolbar>
+    <IconMenu
+      anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+      targetOrigin={{ horizontal: 'right', vertical: 'top' }}
+      iconButtonElement={iconButtonElement}
+    >
+      <MenuItem>Delete</MenuItem>
+    </IconMenu>
   );
 
   const TaskItem = () => {

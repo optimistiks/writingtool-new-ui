@@ -11,6 +11,8 @@ import AccountCircleIcon from 'material-ui/svg-icons/action/account-circle';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 import HelpIcon from 'material-ui/svg-icons/action/help-outline';
 
+import { Link } from 'react-router-dom'
+
 NavBarControlsLarge.contextTypes = {
   muiTheme: PropTypes.object.isRequired
 }
@@ -19,7 +21,7 @@ export default function NavBarControlsLarge (props, context) {
   const { appBar } = context.muiTheme
   return (
     <ToolbarGroup style={{ height: `${appBar.height}px` }}>
-      <RaisedButton label="New Document"/>
+      <RaisedButton containerElement={<Link to='/editor' />} label="New Document"/>
       <IconButton><NotificationsIcon color={appBar.textColor}/></IconButton>
       <IconButton><HelpIcon color={appBar.textColor} title='Help'/></IconButton>
       <ToolbarSeparator />

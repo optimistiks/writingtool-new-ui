@@ -5,8 +5,9 @@ import MenuItem from 'material-ui/MenuItem'
 import IconMenu from 'material-ui/IconMenu';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconButton from 'material-ui/IconButton';
-import { Card, CardActions, CardTitle } from 'material-ui/Card';
+import { Card, CardActions, CardTitle, CardHeader } from 'material-ui/Card';
 import EditIcon from 'material-ui/svg-icons/editor/mode-edit';
+import Subheader from 'material-ui/Subheader';
 import hipsum from 'lorem-hipsum'
 
 export default function DocumentsPage () {
@@ -37,7 +38,9 @@ function DocumentCard (props, context) {
       <Card style={{ marginBottom: context.muiTheme.spacing.desktopGutter }}>
         <div className='row' style={{ marginRight: 0 }}>
           <div className='col-xs'>
-            <CardTitle title={hipsum({ count: 1, units: 'sentences', sentenceLowerBound: 1, sentenceUpperBound: 5 })} />
+            <CardHeader
+              title={hipsum({ count: 1, units: 'sentences', sentenceLowerBound: 1, sentenceUpperBound: 5 })}
+            />
           </div>
           <IconMenu
             iconButtonElement={<IconButton style={{ paddingBottom: '0px' }}><MoreVertIcon /></IconButton>}

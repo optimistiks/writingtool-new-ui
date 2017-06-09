@@ -1,6 +1,7 @@
 import 'normalize.css/normalize.css'
 import 'flexboxgrid/dist/flexboxgrid.css'
 import '../index.css'
+
 import React from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import { storiesOf, configure, addDecorator } from '@storybook/react';
@@ -13,16 +14,19 @@ import MenuItem from 'material-ui/MenuItem'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import ReactTooltip from 'react-tooltip'
 
+import muiTheme from '../muiTheme'
 import Welcome from './Welcome';
 import EditorDocumentBar from '../EditorDocumentBar'
 import EditorToolbar from '../EditorToolbar'
 import EditorPaper from '../EditorPaper'
 import GenericPopover from '../GenericPopover'
 import GenericDialog from '../GenericDialog'
+import GenericInputDialog from '../GenericInputDialog'
 import EditorGoogleFontsDialog from '../EditorGoogleFontsDialog'
 import EditorTextAnalysisPanel from '../EditorTextAnalysisPanel'
 import EditorWordDetailsPanel from '../EditorWordDetailsPanel'
-import muiTheme from '../muiTheme'
+import EditorLinkDialog from '../EditorLinkDialog'
+import EditorImageDialog from '../EditorImageDialog'
 
 injectTapEventPlugin()
 
@@ -78,6 +82,17 @@ storiesOf('GenericDialog', module)
     </GenericDialog>
   ));
 
+storiesOf('GenericInputDialog', module)
+  .add('default', () => (
+    <GenericInputDialog
+      isVisible
+      onClose={() => {
+      }}
+      title='Dialog title'
+      hintText='Input hint'
+    />
+  ));
+
 storiesOf('EditorToolbar', module)
   .add('default', () => <EditorToolbar />);
 
@@ -103,5 +118,15 @@ storiesOf('EditorTextAnalysisPanel', module)
 storiesOf('EditorWordDetailsPanel', module)
   .add('default', () => (
     <EditorWordDetailsPanel />
+  ));
+
+storiesOf('EditorLinkDialog', module)
+  .add('default', () => (
+    <EditorLinkDialog isVisible onClose={() => {}} />
+  ));
+
+storiesOf('EditorImageDialog', module)
+  .add('default', () => (
+    <EditorImageDialog isVisible onClose={() => {}} />
   ));
 
