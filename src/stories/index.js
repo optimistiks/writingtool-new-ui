@@ -10,6 +10,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import FlatButton from 'material-ui/FlatButton'
 import Menu from 'material-ui/Menu'
 import MenuItem from 'material-ui/MenuItem'
+import ReactTooltip from 'react-tooltip'
 
 import Button from './Button';
 import Welcome from './Welcome';
@@ -20,6 +21,7 @@ import EditorPaper from '../EditorPaper'
 import GenericPopover from '../GenericPopover'
 import GenericDialog from '../GenericDialog'
 import EditorGoogleFontsDialog from '../EditorGoogleFontsDialog'
+import EditorTextAnalysisPanel from '../EditorTextAnalysisPanel'
 
 injectTapEventPlugin()
 
@@ -28,7 +30,10 @@ addDecorator((story) => {
   console.log('story', story)
   return (
     <MuiTheme>
-      {story()}
+      <div>
+        {story()}
+        <ReactTooltip effect='solid' />
+      </div>
     </MuiTheme>
   )
 });
@@ -89,3 +94,7 @@ storiesOf('EditorGoogleFontsDialog', module)
     />
   ));
 
+storiesOf('EditorTextAnalysisPanel', module)
+  .add('default', () => (
+    <EditorTextAnalysisPanel />
+  ));
