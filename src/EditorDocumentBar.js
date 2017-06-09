@@ -19,15 +19,14 @@ EditorDocumentBar.contextTypes = {
 export default function EditorDocumentBar (props, context) {
   const { spacing } = context.muiTheme
   return (
-    <Toolbar style={{ ...props.style }}>
-      <ToolbarGroup className='col-xs-4'>
+    <Toolbar style={{ overflowX: 'auto', overflowY: 'hidden', ...props.style }}>
+      <ToolbarGroup>
         <TextField
           hintText='Document title'
           defaultValue={hipsum({ count: 1, units: 'sentences' })}
-          fullWidth
         />
       </ToolbarGroup>
-      <ToolbarGroup className='col-xs-4' style={{ justifyContent: 'center' }}>
+      <ToolbarGroup>
         <RaisedButton
           label='00:00'
           labelStyle={{ verticalAlign: 'middle' }}
@@ -35,7 +34,7 @@ export default function EditorDocumentBar (props, context) {
           icon={<FontIcon className='material-icons'>play_arrow</FontIcon>}
         />
       </ToolbarGroup>
-      <ToolbarGroup className='col-xs-4' style={{ justifyContent: 'flex-end', overflow: 'hidden' }}>
+      <ToolbarGroup>
         <Chip style={{ marginRight: `${spacing.desktopGutterMini}px` }}>Characters: 12000</Chip>
         <Chip style={{ marginRight: `${spacing.desktopGutterMini}px` }}>Words: 6000</Chip>
         <Chip backgroundColor={green100}>Saved</Chip>

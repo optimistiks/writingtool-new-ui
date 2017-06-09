@@ -24,20 +24,24 @@ EditorPage.contextTypes = {
 
 export default function EditorPage (props, context) {
   console.log('muiTheme', context.muiTheme)
-  const { spacing, editorToolbar, appBar, toolbar } = context.muiTheme
+  const { spacing, editorToolbar, appBar, toolbar, zIndex } = context.muiTheme
   return (
     <div style={{ marginTop: `${appBar.height + toolbar.height * 2 + spacing.desktopGutter}px` }}>
-      <EditorDocumentBar style={{ position: 'fixed', top: `${appBar.height}px`, left: 0, right: 0 }} />
-      <EditorToolbar style={{ position: 'fixed', top: `${appBar.height + toolbar.height}px`, left: 0, right: 0 }} />
-      <div className='row' style={{ margin: '0' }}>
-        <div className='col-xs-12 col-sm' style={{ marginBottom: `${spacing.desktopGutter}px`, flex: '0 0 auto' }}>
+      <EditorDocumentBar
+        style={{ position: 'fixed', top: `${appBar.height}px`, left: 0, right: 0, zIndex: zIndex.appBar }}
+      />
+      <EditorToolbar
+        style={{ position: 'fixed', top: `${appBar.height + toolbar.height}px`, left: 0, right: 0, zIndex: zIndex.appBar}}
+      />
+      <EditorGoogleFontsDialog isVisible={false} onClose={() => {}} />
+      <div className='row center-xs' style={{ margin: '0' }}>
+        <div className='col-xs-12 col-md first-md' style={{ maxWidth: '210mm' }}>
+          <EditorPaper />
+        </div>
+        <div className='col-xs-12 col-md first-xs' style={{ flex: '0 0 auto' }}>
           <EditorTextAnalysisPanel />
         </div>
-        <div className='col-xs-12 col-sm first-sm'>
-          <EditorPaper style={{ margin: '0 auto' }} />
-        </div>
       </div>
-      <EditorGoogleFontsDialog isVisible={false} onClose={() => {}} />
     </div>
   )
 }

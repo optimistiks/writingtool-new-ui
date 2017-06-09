@@ -16,12 +16,12 @@ EditorToolbar.propTypes = {
 
 export default function EditorToolbar (props) {
   return (
-    <Toolbar style={{ justifyContent: 'center', ...props.style }}>
-      <ToolbarGroup firstChild={true}>
-        <IconButton iconClassName='material-icons' tooltip='Bold'>format_bold</IconButton>
-        <IconButton iconClassName='material-icons' tooltip='Italic'>format_italic</IconButton>
-        <IconButton iconClassName='material-icons' tooltip='Underlined'>format_underlined</IconButton>
-        <IconButton iconClassName='material-icons' tooltip='Strikethrough'>strikethrough_s</IconButton>
+    <Toolbar style={{ overflowX: 'auto', overflowY: 'hidden', ...props.style }}>
+      <ToolbarGroup firstChild={true} style={{ margin: '0 auto' }}>
+        <IconButton iconClassName='material-icons' >format_bold</IconButton>
+        <IconButton iconClassName='material-icons' >format_italic</IconButton>
+        <IconButton iconClassName='material-icons' >format_underlined</IconButton>
+        <IconButton iconClassName='material-icons' >strikethrough_s</IconButton>
 
         <GenericPopover
           buttonElement={<FlatButton label='Headings' />}
@@ -35,12 +35,12 @@ export default function EditorToolbar (props) {
 
         <EditorToolbarSeparator />
 
-        <IconButton iconClassName='material-icons' tooltip='Code block'>code</IconButton>
-        <IconButton iconClassName='material-icons' tooltip='Quote block'>format_quote</IconButton>
-        <IconButton iconClassName='material-icons' tooltip='Insert link'>link</IconButton>
-        <IconButton iconClassName='material-icons' tooltip='Insert image'>image</IconButton>
-        <IconButton iconClassName='material-icons' tooltip='Bulleted list'>format_list_bulleted</IconButton>
-        <IconButton iconClassName='material-icons' tooltip='Numbered list'>format_list_numbered</IconButton>
+        <IconButton iconClassName='material-icons' >code</IconButton>
+        <IconButton iconClassName='material-icons' >format_quote</IconButton>
+        <IconButton iconClassName='material-icons' >link</IconButton>
+        <IconButton iconClassName='material-icons' >image</IconButton>
+        <IconButton iconClassName='material-icons' >format_list_bulleted</IconButton>
+        <IconButton iconClassName='material-icons' >format_list_numbered</IconButton>
 
         <GenericPopover
           buttonElement={<FlatButton label='Fonts' />}
@@ -57,17 +57,17 @@ export default function EditorToolbar (props) {
 
         <EditorToolbarSeparator />
 
-        <IconButton iconClassName='material-icons' tooltip='Undo'>undo</IconButton>
-        <IconButton iconClassName='material-icons' tooltip='Redo'>redo</IconButton>
+        <IconButton iconClassName='material-icons' >undo</IconButton>
+        <IconButton iconClassName='material-icons' >redo</IconButton>
 
         <EditorToolbarSeparator />
 
-        <IconButton iconClassName='material-icons' tooltip='Word details'>lightbulb_outline</IconButton>
-        <IconButton iconClassName='material-icons' tooltip='Text analysis'>assessment</IconButton>
+        <IconButton iconClassName='material-icons' >lightbulb_outline</IconButton>
+        <IconButton iconClassName='material-icons' >assessment</IconButton>
 
         <EditorToolbarSeparator />
 
-        <IconButton iconClassName='material-icons' tooltip='Print'>print</IconButton>
+        <IconButton iconClassName='material-icons' >print</IconButton>
 
       </ToolbarGroup>
     </Toolbar>

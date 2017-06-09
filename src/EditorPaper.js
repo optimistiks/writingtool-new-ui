@@ -14,7 +14,6 @@ export default function EditorPaper (props, context) {
   const { spacing } = context.muiTheme
   const style = {
     minHeight: '297mm',
-    maxWidth: '210mm',
     padding: `${spacing.desktopGutter}px`,
     ...(props.style || {})
   }
