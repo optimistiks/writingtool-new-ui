@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import FontIcon from 'material-ui/FontIcon';
 import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import Chip from 'material-ui/Chip';
 import { green100 } from 'material-ui/styles/colors'
 import TextField from 'material-ui/TextField';
 import hipsum from 'lorem-hipsum';
-import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
+import { Toolbar, ToolbarGroup, ToolbarSeparator } from 'material-ui/Toolbar';
 
 EditorDocumentBar.propTypes = {
   style: PropTypes.object
@@ -27,7 +28,7 @@ export default function EditorDocumentBar (props, context) {
         />
       </ToolbarGroup>
       <ToolbarGroup>
-        <RaisedButton
+        <FlatButton
           label='00:00'
           labelStyle={{ verticalAlign: 'middle' }}
           style={{ whiteSpace: 'nowrap' }}
@@ -35,9 +36,9 @@ export default function EditorDocumentBar (props, context) {
         />
       </ToolbarGroup>
       <ToolbarGroup>
-        <Chip style={{ marginRight: `${spacing.desktopGutterMini}px` }}>Characters: 12000</Chip>
-        <Chip style={{ marginRight: `${spacing.desktopGutterMini}px` }}>Words: 6000</Chip>
-        <Chip backgroundColor={green100}>Saved</Chip>
+        <span style={{ marginRight: spacing.desktopGutter }}>Characters: 12000</span>
+        <span style={{ marginRight: spacing.desktopGutter }}>Words: 6000</span>
+        <span>Saved</span>
       </ToolbarGroup>
     </Toolbar>
   )

@@ -30,7 +30,7 @@ EditorTextAnalysisPanel.propTypes = {
 
 export default function EditorTextAnalysisPanel (props) {
   return (
-    <Paper style={{ maxWidth: '400px', ...props.style }}>
+    <Paper style={{ ...props.style }}>
       <Subheader>Readability score</Subheader>
       <Table
         selectable={false}

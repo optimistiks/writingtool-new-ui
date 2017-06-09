@@ -6,6 +6,7 @@ import IconMenu from 'material-ui/IconMenu';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton'
+import FlatButton from 'material-ui/FlatButton'
 import AccountCircleIcon from 'material-ui/svg-icons/action/account-circle';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 import HelpIcon from 'material-ui/svg-icons/action/help-outline';

@@ -10,11 +10,10 @@ import RaisedButton from 'material-ui/RaisedButton'
 import FlatButton from 'material-ui/FlatButton'
 import Menu from 'material-ui/Menu'
 import MenuItem from 'material-ui/MenuItem'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import ReactTooltip from 'react-tooltip'
 
-import Button from './Button';
 import Welcome from './Welcome';
-import MuiTheme from '../MuiTheme'
 import EditorDocumentBar from '../EditorDocumentBar'
 import EditorToolbar from '../EditorToolbar'
 import EditorPaper from '../EditorPaper'
@@ -23,6 +22,7 @@ import GenericDialog from '../GenericDialog'
 import EditorGoogleFontsDialog from '../EditorGoogleFontsDialog'
 import EditorTextAnalysisPanel from '../EditorTextAnalysisPanel'
 import EditorWordDetailsPanel from '../EditorWordDetailsPanel'
+import muiTheme from '../muiTheme'
 
 injectTapEventPlugin()
 
@@ -30,12 +30,12 @@ injectTapEventPlugin()
 addDecorator((story) => {
   console.log('story', story)
   return (
-    <MuiTheme>
+    <MuiThemeProvider muiTheme={muiTheme}>
       <div>
         {story()}
         <ReactTooltip effect='solid' />
       </div>
-    </MuiTheme>
+    </MuiThemeProvider>
   )
 });
 

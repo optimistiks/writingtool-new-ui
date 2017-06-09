@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
-import MuiTheme from './MuiTheme'
+import ReactTooltip from 'react-tooltip'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppLayout from './AppLayout'
 import EditorLayout from './EditorLayout'
-import ReactTooltip from 'react-tooltip'
+import muiTheme from './muiTheme'
 
 class AppContainer extends Component {
   constructor (props) {
@@ -24,7 +25,7 @@ class AppContainer extends Component {
     const { isSidebarOpened } = this.state
     return (
       <BrowserRouter>
-        <MuiTheme>
+        <MuiThemeProvider muiTheme={muiTheme}>
           <div>
             <Switch>
               <Route path='/editor' render={(props) => <EditorLayout {...props} isSidebarOpened={isSidebarOpened} toggleSidebar={this.toggleSidebar} />} />
@@ -32,7 +33,7 @@ class AppContainer extends Component {
             </Switch>
             <ReactTooltip effect='solid' />
           </div>
-        </MuiTheme>
+        </MuiThemeProvider>
       </BrowserRouter>
     )
   }
