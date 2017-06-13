@@ -30,6 +30,8 @@ import EditorLinkDialog from '../EditorLinkDialog'
 import EditorImageDialog from '../EditorImageDialog'
 import TaskCreateDialog from '../TaskCreateDialog'
 import DocumentCreateDialog from '../DocumentCreateDialog'
+import SettingsChangeEmailDialog from '../SettingsChangeEmailDialog'
+import SettingsChangePasswordDialog from '../SettingsChangePasswordDialog'
 
 injectTapEventPlugin()
 
@@ -37,7 +39,7 @@ addDecorator((story) => {
   console.log('story', story)
   return (
     <MuiThemeProvider muiTheme={muiTheme}>
-      <div>
+      <div className='mdc-typography mdc-typography--body1'>
         {story()}
         <ReactTooltip effect='solid' />
       </div>
@@ -140,4 +142,14 @@ storiesOf('TaskCreateDialog', module)
 storiesOf('DocumentCreateDialog', module)
   .add('default', () => (
     <DocumentCreateDialog isVisible onClose={() => {}} />
+  ));
+
+storiesOf('SettingsChangeEmailDialog', module)
+  .add('default', () => (
+    <SettingsChangeEmailDialog isVisible onClose={() => {}} />
+  ));
+
+storiesOf('SettingsChangePasswordDialog', module)
+  .add('default', () => (
+    <SettingsChangePasswordDialog isVisible onClose={() => {}} />
   ));

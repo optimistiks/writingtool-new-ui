@@ -26,3 +26,7 @@ body {
 .row_no-spacing > [class|='col'] {
     padding: 0;
 }
+
+.col_no-flex {
+    flex: 0 0 auto;
+}
