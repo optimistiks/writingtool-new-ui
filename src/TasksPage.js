@@ -1,10 +1,19 @@
 import React from 'react';
-import TasksList from './TasksList'
+import FlatButton from 'material-ui/FlatButton';
+import FontIcon from 'material-ui/FontIcon';
+import TasksList from './TasksList';
 
 export default function TasksPage () {
   return (
     <div>
-      <h2>Tasks</h2>
+      <div className='row middle-xs no-side-margin'>
+        <div className='col-xs'>
+          <h2>Tasks</h2>
+        </div>
+        <div className='col-xs end-xs' style={{ flex: '0 0 auto' }}>
+          <FlatButton icon={<FontIcon className='material-icons'>add_circle_outline</FontIcon>} label='New task' />
+        </div>
+      </div>
       <TasksList />
     </div>
   )

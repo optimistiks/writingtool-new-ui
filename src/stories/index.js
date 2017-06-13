@@ -28,6 +28,7 @@ import EditorWordDetailsPanel from '../EditorWordDetailsPanel'
 import EditorLinkDialog from '../EditorLinkDialog'
 import EditorImageDialog from '../EditorImageDialog'
 import TaskCreateDialog from '../TaskCreateDialog'
+import DocumentCreateDialog from '../DocumentCreateDialog'
 
 injectTapEventPlugin()
 
@@ -135,3 +136,7 @@ storiesOf('TaskCreateDialog', module)
     <TaskCreateDialog isVisible onClose={() => {}} />
   ));
 
+storiesOf('DocumentCreateDialog', module)
+  .add('default', () => (
+    <DocumentCreateDialog isVisible onClose={() => {}} />
+  ));
