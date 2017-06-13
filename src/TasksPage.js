@@ -5,14 +5,12 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconButton from 'material-ui/IconButton';
 import { List, ListItem } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
-import { grey400 } from 'material-ui/styles/colors';
-import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 import hipsum from 'lorem-hipsum'
 
 export default function TasksPage () {
   const iconButtonElement = (
     <IconButton>
-      <MoreVertIcon color={grey400}/>
+      <MoreVertIcon />
     </IconButton>
   );
 
@@ -41,13 +39,13 @@ export default function TasksPage () {
       <h2>Tasks</h2>
       <List>
         <TaskItem />
-        <Divider inset={true}/>
+        <Divider/>
         <TaskItem />
-        <Divider inset={true}/>
+        <Divider/>
         <TaskItem />
-        <Divider inset={true}/>
+        <Divider/>
         <TaskItem />
-        <Divider inset={true}/>
+        <Divider/>
         <TaskItem />
       </List>
     </div>
