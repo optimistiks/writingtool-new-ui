@@ -34,7 +34,7 @@ export default function EditorPage (props, context) {
         style={{ position: 'fixed', top: `${appBar.height + toolbar.height}px`, left: 0, right: 0, zIndex: zIndex.menu}}
       />
       <EditorGoogleFontsDialog isVisible={false} onClose={() => {}} />
-      <div className='row center-xs' style={{ margin: '0' }}>
+      <div className='row center-xs no-side-margin'>
         <div className='col-xs-12 col-md first-md' style={{ maxWidth: '210mm' }}>
           <EditorPaper />
         </div>

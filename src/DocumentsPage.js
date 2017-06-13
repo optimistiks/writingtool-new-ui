@@ -36,19 +36,21 @@ function DocumentCard (props, context) {
   return (
     <div className='col-xs-12 col-sm-6 col-md-4'>
       <Card style={{ marginBottom: context.muiTheme.spacing.desktopGutter }}>
-        <div className='row' style={{ marginRight: 0 }}>
+        <div className='row between-xs no-side-margin'>
           <div className='col-xs'>
             <CardHeader
               title={hipsum({ count: 1, units: 'sentences', sentenceLowerBound: 1, sentenceUpperBound: 5 })}
             />
           </div>
-          <IconMenu
-            iconButtonElement={<IconButton style={{ paddingBottom: '0px' }}><MoreVertIcon /></IconButton>}
-            anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-            targetOrigin={{horizontal: 'right', vertical: 'top'}}
-          >
-            <MenuItem primaryText="Delete" />
-          </IconMenu>
+          <div className='col-xs end-xs' style={{ flex: '0 0 auto' }}>
+            <IconMenu
+              iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+              anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+              targetOrigin={{horizontal: 'right', vertical: 'top'}}
+            >
+              <MenuItem primaryText="Delete" />
+            </IconMenu>
+          </div>
         </div>
         <CardActions>
           <FlatButton label="Edit" icon={<EditIcon />} primary />

@@ -29,7 +29,7 @@ function ProjectCard (props, context) {
   return (
     <div className='col-xs-12'>
       <Card style={{ marginBottom: context.muiTheme.spacing.desktopGutter }}>
-        <div className='row' style={{ marginRight: 0 }}>
+        <div className='row no-side-margin'>
           <div className='col-xs'>
             <CardTitle title={hipsum({ count: 1, units: 'sentences', sentenceLowerBound: 1, sentenceUpperBound: 5 })} />
           </div>
