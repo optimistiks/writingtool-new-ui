@@ -27,9 +27,9 @@ import EditorTextAnalysisPanel from '../EditorTextAnalysisPanel'
 import EditorWordDetailsPanel from '../EditorWordDetailsPanel'
 import EditorLinkDialog from '../EditorLinkDialog'
 import EditorImageDialog from '../EditorImageDialog'
+import TaskCreateDialog from '../TaskCreateDialog'
 
 injectTapEventPlugin()
-
 
 addDecorator((story) => {
   console.log('story', story)
@@ -128,5 +128,10 @@ storiesOf('EditorLinkDialog', module)
 storiesOf('EditorImageDialog', module)
   .add('default', () => (
     <EditorImageDialog isVisible onClose={() => {}} />
+  ));
+
+storiesOf('TaskCreateDialog', module)
+  .add('default', () => (
+    <TaskCreateDialog isVisible onClose={() => {}} />
   ));
 

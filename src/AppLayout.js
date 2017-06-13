@@ -1,37 +1,69 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import MediaQuery from 'react-responsive'
 import NavBar from './NavBar'
 import NavBarControlsSmall from './NavBarControlsSmall'
 import NavBarControlsLarge from './NavBarControlsLarge'
 import Sidebar from './Sidebar'
-import AppContent from './AppContent'
+import AppRoutes from './AppRoutes'
+import MediaQuerySmall from './MediaQuerySmall'
+import MediaQueryMedium from './MediaQueryMedium'
+import MediaQueryLarge from './MediaQueryLarge'
 
 AppLayout.propTypes = {
   isSidebarOpened: PropTypes.bool.isRequired,
   toggleSidebar: PropTypes.func.isRequired
 }
 
-export default function AppLayout (props) {
+AppLayout.contextTypes = {
+  muiTheme: PropTypes.object.isRequired
+}
+
+export default function AppLayout (props, context) {
   const { isSidebarOpened, toggleSidebar } = props
+  const { muiTheme } = context
   return (
     <div>
-      <MediaQuery maxWidth={767}>
+      <MediaQuerySmall>
         <NavBar toggleSidebar={toggleSidebar} controlsElement={<NavBarControlsSmall />} />
         <Sidebar isOpened={isSidebarOpened} isDocked={false} />
-        <AppContent />
-      </MediaQuery>
-      <MediaQuery minWidth={768} maxWidth={1199}>
+        <div style={getContentStyle(muiTheme)}>
+          <AppRoutes />
+        </div>
+      </MediaQuerySmall>
+      <MediaQueryMedium>
         <NavBar toggleSidebar={toggleSidebar} controlsElement={<NavBarControlsLarge />} />
         <Sidebar isOpened={isSidebarOpened} isDocked={false} />
-        <AppContent />
-      </MediaQuery>
-      <MediaQuery minWidth={1200}>
+        <div style={getContentStyle(muiTheme)}>
+          <AppRoutes />
+        </div>
+      </MediaQueryMedium>
+      <MediaQueryLarge>
         <NavBar controlsElement={<NavBarControlsLarge />} />
         <Sidebar isOpened={true} isDocked />
-        <AppContent moveForSidebar={true} />
-      </MediaQuery>
+        <div style={getContentStyleLarge(muiTheme)}>
+          <AppRoutes />
+        </div>
+      </MediaQueryLarge>
     </div>
   )
 }
 
+function getContentStyleLarge (muiTheme) {
+  const { appBar, drawer, spacing } = muiTheme
+  const topPadding = appBar.height
+  const leftPadding = drawer.width + spacing.desktopGutter
+  const rightPadding = spacing.desktopGutter
+  return {
+    padding: `${topPadding}px ${rightPadding}px 0px ${leftPadding}px`
+  }
+}
+
+function getContentStyle (muiTheme) {
+  const { appBar, spacing } = muiTheme
+  const topPadding = appBar.height
+  const leftPadding = spacing.desktopGutter
+  const rightPadding = spacing.desktopGutter
+  return {
+    padding: `${topPadding}px ${rightPadding}px 0px ${leftPadding}px`
+  }
+}
