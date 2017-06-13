@@ -5,7 +5,7 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import MediaQuerySmall from './MediaQuerySmall'
+import MediaQuerySmall from './MediaQueryXSmall'
 import MediaQueryMedium from './MediaQueryMedium'
 import MediaQueryLarge from './MediaQueryLarge'
 

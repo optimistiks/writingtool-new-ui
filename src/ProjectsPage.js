@@ -12,15 +12,15 @@ import hipsum from 'lorem-hipsum'
 export default function ProjectsPage () {
   return (
     <div>
-      <div className='row middle-xs no-side-margin'>
+      <div className='row middle-xs row_no-spacing'>
         <div className='col-xs'>
-          <h2>Projects</h2>
+          <h2 className='mdc-typography--display1'>Projects</h2>
         </div>
         <div className='col-xs end-xs' style={{ flex: '0 0 auto' }}>
           <FlatButton icon={<FontIcon className='material-icons'>add_circle_outline</FontIcon>} label='New project' />
         </div>
       </div>
-      <div className='row'>
+      <div className='row row_no-spacing'>
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />
@@ -37,7 +37,7 @@ function ProjectCard (props, context) {
   return (
     <div className='col-xs-12'>
       <Card style={{ marginBottom: context.muiTheme.spacing.desktopGutter }}>
-        <div className='row between-xs no-side-margin'>
+        <div className='row between-xs row_no-spacing'>
           <div className='col-xs'>
             <CardTitle title={hipsum({ count: 1, units: 'sentences', sentenceLowerBound: 1, sentenceUpperBound: 5 })} />
           </div>
@@ -52,7 +52,7 @@ function ProjectCard (props, context) {
           </div>
         </div>
         <CardActions>
-          <FlatButton label="Open" primary labelStyle={{ paddingLeft: 0 }} />
+          <FlatButton label="Open" primary />
         </CardActions>
       </Card>
     </div>

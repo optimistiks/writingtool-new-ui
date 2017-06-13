@@ -10,9 +10,14 @@ import EditIcon from 'material-ui/svg-icons/editor/mode-edit';
 import Subheader from 'material-ui/Subheader';
 import hipsum from 'lorem-hipsum'
 
-export default function DocumentsList () {
+DocumentsList.contextTypes = {
+  muiTheme: PropTypes.object.isRequired
+}
+
+export default function DocumentsList (props, context) {
+  const { desktopGutter } = context.muiTheme.spacing
   return (
-    <div className='row'>
+    <div className='row row_no-spacing' style={{ marginRight: `-${desktopGutter}px` }}>
       <DocumentCard />
       <DocumentCard />
       <DocumentCard />
@@ -30,10 +35,11 @@ DocumentCard.contextTypes = {
 }
 
 function DocumentCard (props, context) {
+  const { desktopGutter } = context.muiTheme.spacing
   return (
     <div className='col-xs-12 col-sm-6 col-md-4'>
-      <Card style={{ marginBottom: context.muiTheme.spacing.desktopGutter }}>
-        <div className='row between-xs no-side-margin'>
+      <Card style={{ marginBottom: desktopGutter, marginRight: desktopGutter }}>
+        <div className='row row_no-spacing between-xs'>
           <div className='col-xs'>
             <CardHeader
               title={hipsum({ count: 1, units: 'sentences', sentenceLowerBound: 1, sentenceUpperBound: 5 })}

@@ -41,19 +41,19 @@ export default function EditorWordDetailsPanel (props, context) {
       <MuiThemeProvider muiTheme={tabsTheme}>
         <Tabs tabItemContainerStyle={{ border: `1px solid ${grey200}` }}>
           <Tab label='Synonyms'>
-            <div style={{ padding: spacing.desktopGutter }}>
+            <div style={{ padding: spacing.desktopGutter }} className='mdc-typography--body1'>
               {randomWords(10).map((word, index) => <span>{word}{index !== 9 ? ', ' : ''}</span>)}
               <Subheader style={{ paddingLeft: 0 }}>Similar words</Subheader>
               {randomWords(10).map((word, index) => <span>{word}{index !== 9 ? ', ' : ''}</span>)}
             </div>
           </Tab>
           <Tab label='Antonyms'>
-            <div style={{ padding: spacing.desktopGutter }}>
+            <div style={{ padding: spacing.desktopGutter }} className='mdc-typography--body1'>
               {randomWords(10).map((word, index) => <span>{word}{index !== 9 ? ', ' : ''}</span>)}
             </div>
           </Tab>
           <Tab label='Definitions'>
-            <div style={{ padding: spacing.desktopGutter }}>
+            <div style={{ padding: spacing.desktopGutter }} className='mdc-typography--body1'>
               <dl>
                 <dt><i>verb</i></dt>
                 <dd><p>{hipsum({ count: 2 })}</p></dd>
@@ -63,7 +63,7 @@ export default function EditorWordDetailsPanel (props, context) {
             </div>
           </Tab>
           <Tab label='Examples'>
-            <div style={{ padding: spacing.desktopGutter }}>
+            <div style={{ padding: spacing.desktopGutter }} className='mdc-typography--body1'>
               <p><i>{hipsum()}</i></p>
               <p><i>{hipsum()}</i></p>
               <p><i>{hipsum()}</i></p>

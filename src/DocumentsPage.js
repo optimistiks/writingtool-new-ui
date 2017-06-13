@@ -15,7 +15,7 @@ import hipsum from 'lorem-hipsum'
 export default function DocumentsPage () {
   return (
     <div>
-      <h2>Documents</h2>
+      <h2 className='mdc-typography--display1'>Documents</h2>
       <DocumentsList />
     </div>
   )
@@ -29,7 +29,7 @@ function DocumentCard (props, context) {
   return (
     <div className='col-xs-12 col-sm-6 col-md-4'>
       <Card style={{ marginBottom: context.muiTheme.spacing.desktopGutter }}>
-        <div className='row between-xs no-side-margin'>
+        <div className='row row_no-spacing between-xs'>
           <div className='col-xs'>
             <CardHeader
               title={hipsum({ count: 1, units: 'sentences', sentenceLowerBound: 1, sentenceUpperBound: 5 })}

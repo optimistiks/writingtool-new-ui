@@ -5,7 +5,7 @@ import NavBarControlsSmall from './NavBarControlsSmall'
 import NavBarControlsLarge from './NavBarControlsLarge'
 import Sidebar from './Sidebar'
 import AppRoutes from './AppRoutes'
-import MediaQuerySmall from './MediaQuerySmall'
+import MediaQuerySmall from './MediaQueryXSmall'
 import MediaQueryMedium from './MediaQueryMedium'
 import MediaQueryLarge from './MediaQueryLarge'
 

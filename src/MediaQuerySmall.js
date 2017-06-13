@@ -8,7 +8,7 @@ MediaQuerySmall.propTypes = {
 
 export default function MediaQuerySmall (props) {
   return (
-    <MediaQuery maxWidth={767}>
+    <MediaQuery minWidth='48' maxWidth='62em'>
       {props.children}
     </MediaQuery>
   )

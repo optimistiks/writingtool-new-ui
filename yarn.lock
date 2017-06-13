@@ -6,6 +6,10 @@
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@material/layout-grid/-/layout-grid-0.1.2.tgz#c19d69e3a8ff9f0949528e1c7fe2ab4fda492c7b"
 
+"@material/typography@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@material/typography/-/typography-0.2.2.tgz#dc5f0763ad7d6e5ad5c86c394b360f2b4cf30bb2"
+
 "@storybook/addon-actions@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.0.1.tgz#b3832b79c34cc8a73cfe5e7ba808c4dde25241dc"

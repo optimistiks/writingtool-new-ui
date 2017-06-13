@@ -1,4 +1,5 @@
 import 'normalize.css/normalize.css'
+import '@material/typography/dist/mdc.typography.css'
 import 'flexboxgrid/dist/flexboxgrid.css'
 import '../index.css'
 

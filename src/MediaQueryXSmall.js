@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import MediaQuery from 'react-responsive'
 
-MediaQueryMedium.propTypes = {
+MediaQuerySmall.propTypes = {
   children: PropTypes.node.isRequired
 }
 
-export default function MediaQueryMedium (props) {
+export default function MediaQuerySmall (props) {
   return (
-    <MediaQuery minWidth='62em' maxWidth='75em'>
+    <MediaQuery maxWidth='48em'>
       {props.children}
     </MediaQuery>
   )

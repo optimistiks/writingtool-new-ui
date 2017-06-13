@@ -7,7 +7,7 @@ import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
 import hipsum from 'lorem-hipsum'
 import TasksList from './TasksList'
-import TimeSpentSummary from './TimeSpentSummary'
+import TimeSpentSummary from './TimeTrackingSummary'
 
 ProjectPage.contextTypes = {
   muiTheme: PropTypes.object.isRequired
@@ -32,11 +32,13 @@ export default function ProjectPage (props, context) {
           <TimeSpentSummary />
         </div>
       </Paper>
-      <div className='row'>
+      <div className='row middle-xs row_no-spacing'>
         <div className='col-xs'>
-          <Subheader>Project tasks</Subheader>
+          <Subheader style={{ paddingLeft: 0 }}>Project tasks</Subheader>
         </div>
-        <FlatButton icon={<FontIcon className='material-icons'>add_circle_outline</FontIcon>} label='New task' />
+        <div className='col-xs end-xs' style={{ flex: '0 0 auto' }}>
+          <FlatButton icon={<FontIcon className='material-icons'>add_circle_outline</FontIcon>} label='New task' />
+        </div>
       </div>
       <TasksList />
     </div>

@@ -7,7 +7,7 @@ import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
 import DatePicker from 'material-ui/DatePicker';
 import hipsum from 'lorem-hipsum'
-import TimeSpentSummary from './TimeSpentSummary'
+import TimeSpentSummary from './TimeTrackingSummary'
 import DocumentsList from './DocumentsList'
 
 TaskPage.contextTypes = {
@@ -36,11 +36,13 @@ export default function TaskPage (props, context) {
           <TimeSpentSummary />
         </div>
       </Paper>
-      <div className='row'>
+      <div className='row middle-xs row_no-spacing' style={{ marginBottom: spacing.desktopGutter }}>
         <div className='col-xs'>
-          <Subheader>Task documents</Subheader>
+          <Subheader style={{ paddingLeft: 0 }}>Task documents</Subheader>
         </div>
-        <FlatButton icon={<FontIcon className='material-icons'>add_circle_outline</FontIcon>} label='New document' />
+        <div className='col-xs end-xs' style={{ flex: '0 0 auto' }}>
+          <FlatButton icon={<FontIcon className='material-icons'>add_circle_outline</FontIcon>} label='New document' />
+        </div>
       </div>
       <DocumentsList />
     </div>
