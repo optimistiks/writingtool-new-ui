@@ -32,6 +32,7 @@ import TaskCreateDialog from '../TaskCreateDialog'
 import DocumentCreateDialog from '../DocumentCreateDialog'
 import SettingsChangeEmailDialog from '../SettingsChangeEmailDialog'
 import SettingsChangePasswordDialog from '../SettingsChangePasswordDialog'
+import JobFlagDialog from '../JobFlagDialog'
 
 injectTapEventPlugin()
 
@@ -152,4 +153,9 @@ storiesOf('SettingsChangeEmailDialog', module)
 storiesOf('SettingsChangePasswordDialog', module)
   .add('default', () => (
     <SettingsChangePasswordDialog isVisible onClose={() => {}} />
+  ));
+
+storiesOf('JobFlagDialog', module)
+  .add('default', () => (
+    <JobFlagDialog isVisible onClose={() => {}} />
   ));

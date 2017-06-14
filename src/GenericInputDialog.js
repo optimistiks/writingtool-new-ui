@@ -26,7 +26,7 @@ export default function GenericInputDialog (props) {
       onClose={onClose}
     >
       <div>
-        <TextField hintText={hintText} fullWidth />
+        <TextField floatingLabelText={hintText} fullWidth />
       </div>
     </GenericDialog>
   )

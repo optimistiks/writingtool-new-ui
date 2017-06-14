@@ -32,6 +32,7 @@ import { ToolbarGroup } from 'material-ui/Toolbar';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconMenu from 'material-ui/IconMenu';
 import { List, ListItem } from 'material-ui/List';
+import JobItem from './JobItem'
 
 
 JobSearchPage.contextTypes = {
@@ -41,27 +42,25 @@ JobSearchPage.contextTypes = {
 export default function JobSearchPage (props, context) {
   console.log('theme', context.muiTheme)
   const { desktopGutter, desktopGutterMini } = context.muiTheme.spacing;
-  const iconButtonElement = (
-    <IconButton
-      touch={true}
-      tooltip="more"
-      tooltipPosition="bottom-left"
-    >
-      <MoreVertIcon color={grey400}/>
-    </IconButton>
-  );
 
-  const listItem = (
-    <ListItem
-      rightIconButton={
-        <ToolbarGroup>
-          <IconButton iconClassName='material-icons'
-                      iconStyle={{ color: grey400 }}>notifications_off</IconButton>
-          <IconButton iconClassName='material-icons' iconStyle={{ color: red400 }}>delete</IconButton>
-        </ToolbarGroup>
-      }
-      primaryText='My filter'
-    />
+  const jobItemActions = (
+    <CardActions>
+      <div className='row row_no-spacing center-xs'>
+        <div className='col-xs-6 col-lg-3'>
+          <FlatButton icon={<FontIcon className='material-icons'>open_in_new</FontIcon>} label="Open"
+                      primary/>
+        </div>
+        <div className='col-xs-6 col-lg-3'>
+          <FlatButton label="Bookmark"/>
+        </div>
+        <div className='col-xs-6 col-lg-3'>
+          <FlatButton label="Add to applied"/>
+        </div>
+        <div className='col-xs-6 col-lg-3'>
+          <FlatButton label="Add to projects"/>
+        </div>
+      </div>
+    </CardActions>
   )
 
   return (
@@ -148,87 +147,8 @@ export default function JobSearchPage (props, context) {
         <div className='col-xs col_no-flex' style={{ width: desktopGutter, height: desktopGutter }}/>
         <div className='col-xs-12 col-lg'>
           <Subheader style={{ padding: 0 }}>Results: 2898</Subheader>
-          <Card style={{ marginBottom: desktopGutter }}>
-            <CardText>
-              <div className='row row_no-spacing between-xs middle-xs'>
-                <div className='col-xs col_no-flex mdc-typography--caption'
-                     style={{ color: typography.textLightBlack }}>
-                  today
-                </div>
-                <div className='col-xs'>
-                  <div>
-                    <div className='row row_no-spacing end-xs'>
-                      <div className='col-xs col_no-flex' style={{ marginLeft: desktopGutterMini }}><Chip>remote</Chip>
-                      </div>
-                      <div className='col-xs col_no-flex' style={{ marginLeft: desktopGutterMini }}><Chip>full
-                        time</Chip></div>
-                      <div className='col-xs col_no-flex' style={{ marginLeft: desktopGutterMini }}><Chip>New
-                        York</Chip></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardText>
-            <CardTitle title={hipsum()}/>
-            <CardText>{hipsum({ count: 3 })}</CardText>
-            <CardActions>
-              <div className='row row_no-spacing'>
-                <div className='col-xs-6 col-lg-3'>
-                  <FlatButton icon={<FontIcon className='material-icons'>open_in_new</FontIcon>} label="Open"
-                              primary/>
-                </div>
-                <div className='col-xs-6 col-lg-3'>
-                  <FlatButton label="Bookmark"/>
-                </div>
-                <div className='col-xs-6 col-lg-3'>
-                  <FlatButton label="Add to applied"/>
-                </div>
-                <div className='col-xs-6 col-lg-3'>
-                  <FlatButton label="Add to projects"/>
-                </div>
-              </div>
-            </CardActions>
-          </Card>
-          <Card style={{ marginBottom: desktopGutter }}>
-            <CardText>
-              <div className='row row_no-spacing between-xs middle-xs'>
-                <div className='col-xs col_no-flex mdc-typography--caption'
-                     style={{ color: typography.textLightBlack }}>
-                  today
-                </div>
-                <div className='col-xs'>
-                  <div>
-                    <div className='row row_no-spacing end-xs'>
-                      <div className='col-xs col_no-flex' style={{ marginLeft: desktopGutterMini }}><Chip>remote</Chip>
-                      </div>
-                      <div className='col-xs col_no-flex' style={{ marginLeft: desktopGutterMini }}><Chip>full
-                        time</Chip></div>
-                      <div className='col-xs col_no-flex' style={{ marginLeft: desktopGutterMini }}><Chip>New
-                        York</Chip></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardText>
-            <CardTitle title={hipsum()}/>
-            <CardActions>
-              <div className='row row_no-spacing'>
-                <div className='col-xs-6 col-lg-3'>
-                  <FlatButton icon={<FontIcon className='material-icons'>open_in_new</FontIcon>} label="Open"
-                              primary/>
-                </div>
-                <div className='col-xs-6 col-lg-3'>
-                  <FlatButton label="Bookmark"/>
-                </div>
-                <div className='col-xs-6 col-lg-3'>
-                  <FlatButton label="Add to applied"/>
-                </div>
-                <div className='col-xs-6 col-lg-3'>
-                  <FlatButton label="Add to projects"/>
-                </div>
-              </div>
-            </CardActions>
-          </Card>
+          <JobItem actionsElement={jobItemActions} />
+          <JobItem actionsElement={jobItemActions} />
         </div>
       </div>
     </div>

@@ -75,12 +75,14 @@ function Sidebar (props, context) {
               leftIcon={<ViewListIcon />}
             />,
             <ListItem
-              value={7}
+              containerElement={<Link to='/jobSearch/bookmarks'/>}
+              value='/jobSearch/bookmarks'
               primaryText="Bookmarks"
               leftIcon={<BookmarkIcon />}
             />,
             <ListItem
-              value={8}
+              containerElement={<Link to='/jobSearch/applied'/>}
+              value='/jobSearch/applied'
               primaryText="Applied to"
               leftIcon={<CheckCircleIcon />}
             />,
