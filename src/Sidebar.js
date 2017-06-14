@@ -64,13 +64,14 @@ function Sidebar (props, context) {
         />
         <ListItem
           value={5}
-          primaryText="Job search"
+          primaryText="Find a job"
           primaryTogglesNestedList
           leftIcon={<SearchIcon />}
           nestedItems={[
             <ListItem
-              value={6}
-              primaryText="Job feed"
+              containerElement={<Link to='/jobSearch'/>}
+              value='/jobSearch'
+              primaryText="Job search"
               leftIcon={<ViewListIcon />}
             />,
             <ListItem

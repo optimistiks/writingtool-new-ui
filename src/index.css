@@ -30,3 +30,7 @@ body {
 .col_no-flex {
     flex: 0 0 auto;
 }
+
+.va-middle {
+    vertical-align: middle;
+}

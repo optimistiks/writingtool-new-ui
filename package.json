@@ -8,6 +8,7 @@
     "flexboxgrid": "^6.3.1",
     "lorem-hipsum": "^0.1.7",
     "material-ui": "^0.18.1",
+    "material-ui-chip-input": "^0.15.0",
     "normalize.css": "^7.0.0",
     "prop-types": "^15.5.10",
     "random-words": "^0.0.1",

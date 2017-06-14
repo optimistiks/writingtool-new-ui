@@ -9,12 +9,11 @@ import EditorPage from './EditorPage'
 
 EditorLayout.propTypes = {
   isSidebarOpened: PropTypes.bool.isRequired,
-  toggleSidebar: PropTypes.func.isRequired,
-  match: PropTypes.object.isRequired
+  toggleSidebar: PropTypes.func.isRequired
 }
 
 export default function EditorLayout (props) {
-  const { isSidebarOpened, toggleSidebar, match } = props
+  const { isSidebarOpened, toggleSidebar } = props
   console.log('toggleSidebar', toggleSidebar)
   return (
     <div>

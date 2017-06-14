@@ -27,8 +27,8 @@ export default function SettingsChangeEmailDialog (props) {
           <div className='col-xs-12'>
             <Subheader style={{ padding: 0 }}>Current email</Subheader>
             <div>user@mail.com</div>
-            <TextField floatingLabelText='Email' floatingLabelFixed hintText='Enter new email address' fullWidth />
-            <TextField floatingLabelText='Password' floatingLabelFixed hintText='Enter your current password' fullWidth />
+            <TextField floatingLabelText='New email' fullWidth />
+            <TextField floatingLabelText='Current password' fullWidth />
           </div>
         </div>
 

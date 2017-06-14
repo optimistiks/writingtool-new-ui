@@ -34,6 +34,7 @@ export default function SettingsPage (props, context) {
         <Subheader style={{ padding: 0 }}>Phone number</Subheader>
         <TextField
           hintText="Enter phone number"
+          fullWidth
         />
         <Subheader style={{ padding: 0 }}>Notifications</Subheader>
         <div className='row row_no-spacing start-xs'>

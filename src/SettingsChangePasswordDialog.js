@@ -25,9 +25,9 @@ export default function SettingsChangePasswordDialog (props) {
       <div>
         <div className='row row_no-spacing'>
           <div className='col-xs-12'>
-            <TextField floatingLabelText='Current password' floatingLabelFixed fullWidth />
-            <TextField floatingLabelText='New password' floatingLabelFixed fullWidth />
-            <TextField floatingLabelText='Confirm new password' floatingLabelFixed fullWidth />
+            <TextField floatingLabelText='Current password' fullWidth />
+            <TextField floatingLabelText='New password' fullWidth />
+            <TextField floatingLabelText='Confirm new password' fullWidth />
           </div>
         </div>
 
