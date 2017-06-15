@@ -8,7 +8,10 @@ GenericDialog.propTypes = {
   isVisible: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   title: PropTypes.string,
-  actions: PropTypes.element,
+  actions: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element)
+  ]),
   children: PropTypes.element.isRequired
 }
 
@@ -18,9 +21,10 @@ GenericDialog.defaultProps = {
 }
 
 export default function GenericDialog (props) {
-  const { isVisible, title, actions, children, onClose, isModal, isScrollable } = props
+  const { isVisible, title, actions, children, onClose, isModal, isScrollable, ...restProps } = props
   return (
     <Dialog
+      {...restProps}
       title={title}
       actions={actions}
       modal={isModal}

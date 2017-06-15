@@ -5,14 +5,13 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import MediaQuerySmall from './MediaQueryXSmall'
-import MediaQueryMedium from './MediaQueryMedium'
-import MediaQueryLarge from './MediaQueryLarge'
+import MediaQuery from 'react-responsive'
+import { MEDIUM_END, LARGE_START } from './mediaQueryBreakpoints'
 
 export default function TimeSpentSummary () {
   return (
     <div>
-      <MediaQuerySmall>
+      <MediaQuery maxWidth={MEDIUM_END}>
         <Table>
           <TableBody displayRowCheckbox={false}>
             <TableRow>
@@ -33,30 +32,8 @@ export default function TimeSpentSummary () {
             </TableRow>
           </TableBody>
         </Table>
-      </MediaQuerySmall>
-      <MediaQueryMedium>
-        <Table>
-          <TableBody displayRowCheckbox={false}>
-            <TableRow>
-              <TableRowColumn>Today</TableRowColumn>
-              <TableRowColumn>1h 20m</TableRowColumn>
-            </TableRow>
-            <TableRow>
-              <TableRowColumn>This week</TableRowColumn>
-              <TableRowColumn>24h 10m</TableRowColumn>
-            </TableRow>
-            <TableRow>
-              <TableRowColumn>Last week</TableRowColumn>
-              <TableRowColumn>38h 40m</TableRowColumn>
-            </TableRow>
-            <TableRow>
-              <TableRowColumn>All time</TableRowColumn>
-              <TableRowColumn>56h 10m</TableRowColumn>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </MediaQueryMedium>
-      <MediaQueryLarge>
+      </MediaQuery>
+      <MediaQuery minWidth={LARGE_START}>
         <Table>
           <TableBody displayRowCheckbox={false}>
             <TableRow>
@@ -73,7 +50,7 @@ export default function TimeSpentSummary () {
             </TableRow>
           </TableBody>
         </Table>
-      </MediaQueryLarge>
+      </MediaQuery>
     </div>
   )
 }

@@ -5,16 +5,21 @@ import NavBar from './NavBar'
 import NavBarControlsSmall from './NavBarControlsSmall'
 import NavBarControlsLarge from './NavBarControlsLarge'
 import Sidebar from './Sidebar'
-import EditorPage from './EditorPage'
+import WriterProfilePage from './WriterProfilePage'
 import { SMALL_END, MEDIUM_START } from './mediaQueryBreakpoints'
 
-EditorLayout.propTypes = {
+WriterProfileLayout.propTypes = {
   isSidebarOpened: PropTypes.bool.isRequired,
   toggleSidebar: PropTypes.func.isRequired
 }
 
-export default function EditorLayout (props) {
+WriterProfileLayout.contextTypes = {
+  muiTheme: PropTypes.object.isRequired
+}
+
+export default function WriterProfileLayout (props, context) {
   const { isSidebarOpened, toggleSidebar } = props
+  const { appBar } = context.muiTheme
   console.log('toggleSidebar', toggleSidebar)
   return (
     <div>
@@ -25,7 +30,9 @@ export default function EditorLayout (props) {
         <NavBar toggleSidebar={toggleSidebar} controlsElement={<NavBarControlsLarge />} />
       </MediaQuery>
       <Sidebar isOpened={isSidebarOpened} isDocked={false} />
-      <EditorPage />
+      <div style={{ marginTop: appBar.height }}>
+        <WriterProfilePage />
+      </div>
     </div>
   )
 }

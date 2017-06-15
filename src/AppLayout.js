@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import MediaQuery from 'react-responsive'
+import { SMALL_END, MEDIUM_START, MEDIUM_END, LARGE_START } from './mediaQueryBreakpoints'
 import NavBar from './NavBar'
 import NavBarControlsSmall from './NavBarControlsSmall'
 import NavBarControlsLarge from './NavBarControlsLarge'
 import Sidebar from './Sidebar'
 import AppRoutes from './AppRoutes'
-import MediaQuerySmall from './MediaQueryXSmall'
-import MediaQueryMedium from './MediaQueryMedium'
-import MediaQueryLarge from './MediaQueryLarge'
 
 AppLayout.propTypes = {
   isSidebarOpened: PropTypes.bool.isRequired,
@@ -23,27 +22,27 @@ export default function AppLayout (props, context) {
   const { muiTheme } = context
   return (
     <div>
-      <MediaQuerySmall>
+      <MediaQuery maxWidth={SMALL_END}>
         <NavBar toggleSidebar={toggleSidebar} controlsElement={<NavBarControlsSmall />} />
         <Sidebar isOpened={isSidebarOpened} isDocked={false} />
         <div style={getContentStyle(muiTheme)}>
           <AppRoutes />
         </div>
-      </MediaQuerySmall>
-      <MediaQueryMedium>
+      </MediaQuery>
+      <MediaQuery minWidth={MEDIUM_START} maxWidth={MEDIUM_END}>
         <NavBar toggleSidebar={toggleSidebar} controlsElement={<NavBarControlsLarge />} />
         <Sidebar isOpened={isSidebarOpened} isDocked={false} />
         <div style={getContentStyle(muiTheme)}>
           <AppRoutes />
         </div>
-      </MediaQueryMedium>
-      <MediaQueryLarge>
+      </MediaQuery>
+      <MediaQuery minWidth={LARGE_START}>
         <NavBar controlsElement={<NavBarControlsLarge />} />
         <Sidebar isOpened={true} isDocked />
         <div style={getContentStyleLarge(muiTheme)}>
           <AppRoutes />
         </div>
-      </MediaQueryLarge>
+      </MediaQuery>
     </div>
   )
 }

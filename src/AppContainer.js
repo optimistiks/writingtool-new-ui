@@ -4,6 +4,7 @@ import ReactTooltip from 'react-tooltip'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppLayout from './AppLayout'
 import EditorLayout from './EditorLayout'
+import WriterProfileLayout from './WriterProfileLayout'
 import muiTheme from './muiTheme'
 
 class AppContainer extends Component {
@@ -28,6 +29,7 @@ class AppContainer extends Component {
         <MuiThemeProvider muiTheme={muiTheme}>
           <div>
             <Switch>
+              <Route path='/writer/:writerKey' render={(props) => <WriterProfileLayout {...props} isSidebarOpened={isSidebarOpened} toggleSidebar={this.toggleSidebar} />} />
               <Route path='/editor' render={(props) => <EditorLayout {...props} isSidebarOpened={isSidebarOpened} toggleSidebar={this.toggleSidebar} />} />
               <Route path='/' render={(props) => <AppLayout {...props} isSidebarOpened={isSidebarOpened} toggleSidebar={this.toggleSidebar} />} />
             </Switch>
