@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import Subheader from 'material-ui/Subheader';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
-import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
 import hipsum from 'lorem-hipsum'
 import TasksList from './TasksList'
 import TimeSpentSummary from './TimeTrackingSummary'
+import MaterialIcon from './MaterialIcon';
 
 ProjectPage.contextTypes = {
   muiTheme: PropTypes.object.isRequired
@@ -37,7 +37,7 @@ export default function ProjectPage (props, context) {
           <Subheader style={{ paddingLeft: 0 }}>Project tasks</Subheader>
         </div>
         <div className='col-xs end-xs' style={{ flex: '0 0 auto' }}>
-          <FlatButton icon={<FontIcon className='material-icons'>add_circle_outline</FontIcon>} label='New task' />
+          <FlatButton icon={<MaterialIcon glyph="add_circle_outline" />} label='New task' />
         </div>
       </div>
       <TasksList />

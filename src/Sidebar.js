@@ -4,15 +4,7 @@ import { withRouter, Link } from 'react-router-dom'
 import Drawer from 'material-ui/Drawer'
 import { List, ListItem, makeSelectable } from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
-import FontIcon from 'material-ui/FontIcon';
-import HomeIcon from 'material-ui/svg-icons/action/home';
-import ListIcon from 'material-ui/svg-icons/action/list';
-import ViewModuleIcon from 'material-ui/svg-icons/action/view-module';
-import ViewStreamIcon from 'material-ui/svg-icons/action/view-stream';
-import ViewListIcon from 'material-ui/svg-icons/action/view-list';
-import SearchIcon from 'material-ui/svg-icons/action/search';
-import BookmarkIcon from 'material-ui/svg-icons/action/bookmark';
-import CheckCircleIcon from 'material-ui/svg-icons/action/check-circle';
+import MaterialIcon from './MaterialIcon'
 
 const SelectableList = makeSelectable(List)
 
@@ -42,49 +34,49 @@ function Sidebar (props, context) {
           containerElement={<Link to='/'/>}
           value='/'
           primaryText="Home"
-          leftIcon={<HomeIcon />}
+          leftIcon={<MaterialIcon glyph='home' />}
         />
         <ListItem
           containerElement={<Link to='/documents'/>}
           value='/documents'
           primaryText="Documents"
-          leftIcon={<ViewModuleIcon />}
+          leftIcon={<MaterialIcon glyph='view_module' />}
         />
         <ListItem
           containerElement={<Link to='/tasks'/>}
           value='/tasks'
           primaryText="Tasks"
-          leftIcon={<ListIcon />}
+          leftIcon={<MaterialIcon glyph='list' />}
         />
         <ListItem
           containerElement={<Link to='/projects'/>}
           value='/projects'
           primaryText="Projects"
-          leftIcon={<ViewStreamIcon />}
+          leftIcon={<MaterialIcon glyph='view_stream' />}
         />
         <ListItem
           value={5}
           primaryText="Find a job"
           primaryTogglesNestedList
-          leftIcon={<SearchIcon />}
+          leftIcon={<MaterialIcon glyph='search' />}
           nestedItems={[
             <ListItem
               containerElement={<Link to='/jobSearch'/>}
               value='/jobSearch'
               primaryText="Job search"
-              leftIcon={<ViewListIcon />}
+              leftIcon={<MaterialIcon glyph='view_list' />}
             />,
             <ListItem
               containerElement={<Link to='/jobSearch/bookmarks'/>}
               value='/jobSearch/bookmarks'
               primaryText="Bookmarks"
-              leftIcon={<BookmarkIcon />}
+              leftIcon={<MaterialIcon glyph='bookmark' />}
             />,
             <ListItem
               containerElement={<Link to='/jobSearch/applied'/>}
               value='/jobSearch/applied'
               primaryText="Applied to"
-              leftIcon={<CheckCircleIcon />}
+              leftIcon={<MaterialIcon glyph='check_circle' />}
             />,
           ]}
         />
@@ -92,7 +84,7 @@ function Sidebar (props, context) {
           disabled
           value={9}
           primaryText="Writer profile"
-          leftIcon={<FontIcon className='material-icons'>account_circle</FontIcon>}
+          leftIcon={<MaterialIcon glyph='account_circle' />}
         />
       </SelectableList>
     </Drawer>

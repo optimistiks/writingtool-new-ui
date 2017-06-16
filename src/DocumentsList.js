@@ -3,11 +3,10 @@ import PropTypes from 'prop-types'
 import FlatButton from 'material-ui/FlatButton'
 import MenuItem from 'material-ui/MenuItem'
 import IconMenu from 'material-ui/IconMenu';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconButton from 'material-ui/IconButton';
 import { Card, CardActions, CardHeader } from 'material-ui/Card';
-import EditIcon from 'material-ui/svg-icons/editor/mode-edit';
 import hipsum from 'lorem-hipsum'
+import MaterialIcon from './MaterialIcon'
 
 DocumentsList.contextTypes = {
   muiTheme: PropTypes.object.isRequired
@@ -42,11 +41,12 @@ function DocumentCard (props, context) {
           <div className='col-xs'>
             <CardHeader
               title={hipsum({ count: 1, units: 'sentences', sentenceLowerBound: 1, sentenceUpperBound: 5 })}
+              textStyle={{ paddingRight: '0px' }}
             />
           </div>
           <div className='col-xs end-xs' style={{ flex: '0 0 auto' }}>
             <IconMenu
-              iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+              iconButtonElement={<IconButton><MaterialIcon glyph='more_vert' /></IconButton>}
               anchorOrigin={{horizontal: 'right', vertical: 'top'}}
               targetOrigin={{horizontal: 'right', vertical: 'top'}}
             >
@@ -55,7 +55,7 @@ function DocumentCard (props, context) {
           </div>
         </div>
         <CardActions>
-          <FlatButton label="Edit" icon={<EditIcon />} primary />
+          <FlatButton label="Edit" icon={<MaterialIcon glyph='mode_edit' />} primary />
         </CardActions>
       </Card>
     </div>

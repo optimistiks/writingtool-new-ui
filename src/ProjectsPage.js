@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import FlatButton from 'material-ui/FlatButton';
-import FontIcon from 'material-ui/FontIcon';
 import MenuItem from 'material-ui/MenuItem'
 import IconMenu from 'material-ui/IconMenu';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconButton from 'material-ui/IconButton';
 import { Card, CardActions, CardTitle } from 'material-ui/Card';
 import hipsum from 'lorem-hipsum'
+import MaterialIcon from './MaterialIcon'
 
 export default function ProjectsPage () {
   return (
@@ -17,7 +16,7 @@ export default function ProjectsPage () {
           <h2 className='mdc-typography--display1'>Projects</h2>
         </div>
         <div className='col-xs end-xs' style={{ flex: '0 0 auto' }}>
-          <FlatButton icon={<FontIcon className='material-icons'>add_circle_outline</FontIcon>} label='New project' />
+          <FlatButton icon={<MaterialIcon glyph='add_circle_outline'/>} label='New project' />
         </div>
       </div>
       <div className='row row_no-spacing'>
@@ -43,7 +42,7 @@ function ProjectCard (props, context) {
           </div>
           <div className='col-xs end-xs' style={{ flex: '0 0 auto' }}>
             <IconMenu
-              iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+              iconButtonElement={<IconButton><MaterialIcon glyph='more_vert' /></IconButton>}
               anchorOrigin={{horizontal: 'right', vertical: 'top'}}
               targetOrigin={{horizontal: 'right', vertical: 'top'}}
             >

@@ -1,7 +1,7 @@
 import React from 'react';
 import FlatButton from 'material-ui/FlatButton';
-import FontIcon from 'material-ui/FontIcon';
 import TasksList from './TasksList';
+import MaterialIcon from './MaterialIcon';
 
 export default function TasksPage () {
   return (
@@ -11,7 +11,7 @@ export default function TasksPage () {
           <h2 className='mdc-typography--display1'>Tasks</h2>
         </div>
         <div className='col-xs end-xs' style={{ flex: '0 0 auto' }}>
-          <FlatButton icon={<FontIcon className='material-icons'>add_circle_outline</FontIcon>} label='New task' />
+          <FlatButton icon={<MaterialIcon glyph="add_circle_outline" />} label='New task' />
         </div>
       </div>
       <TasksList />

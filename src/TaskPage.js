@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import Subheader from 'material-ui/Subheader';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
-import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
 import DatePicker from 'material-ui/DatePicker';
 import hipsum from 'lorem-hipsum'
 import TimeSpentSummary from './TimeTrackingSummary'
 import DocumentsList from './DocumentsList'
+import MaterialIcon from './MaterialIcon';
 
 TaskPage.contextTypes = {
   muiTheme: PropTypes.object.isRequired
@@ -41,7 +41,7 @@ export default function TaskPage (props, context) {
           <Subheader style={{ paddingLeft: 0 }}>Task documents</Subheader>
         </div>
         <div className='col-xs end-xs' style={{ flex: '0 0 auto' }}>
-          <FlatButton icon={<FontIcon className='material-icons'>add_circle_outline</FontIcon>} label='New document' />
+          <FlatButton icon={<MaterialIcon glyph="add_circle_outline" />} label='New document' />
         </div>
       </div>
       <DocumentsList />

@@ -9,7 +9,7 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 import { red100, purple100, blue100, teal100, lime100, blueGrey100, greenA400 } from 'material-ui/styles/colors'
-import FontIcon from 'material-ui/FontIcon'
+import MaterialIcon from './MaterialIcon'
 
 const IssuesSummaryTableRow = ({ text, style }) => (
   <TableRow displayBorder={false} style={style}>
@@ -37,8 +37,8 @@ export default function EditorTextAnalysisPanel (props) {
             <TableRowColumn>
               <span style={{ verticalAlign: 'middle' }}>Score</span>
               {' '}
-              <FontIcon
-                className='material-icons'
+              <MaterialIcon
+                glyph='help_outline'
                 style={{ fontSize: '18px', verticalAlign: 'middle' }}
                 data-tip={`
                 Ratings are from A to E,<br/>
@@ -47,7 +47,7 @@ export default function EditorTextAnalysisPanel (props) {
                 `}
                 data-place='right'
                 data-multiline
-              >help_outline</FontIcon>
+              />
             </TableRowColumn>
             <TableRowColumn>A</TableRowColumn>
           </TableRow>
@@ -55,8 +55,8 @@ export default function EditorTextAnalysisPanel (props) {
             <TableRowColumn>
               <span style={{ verticalAlign: 'middle' }}>Grade</span>
               {' '}
-              <FontIcon
-                className='material-icons'
+              <MaterialIcon
+                glyph='help_outline'
                 style={{ fontSize: '18px', verticalAlign: 'middle' }}
                 data-tip={`
                 A grade level (based on the USA education system) is equivalent to the number of years of education<br/>
@@ -66,7 +66,7 @@ export default function EditorTextAnalysisPanel (props) {
                 `}
                 data-place='right'
                 data-multiline
-              >help_outline</FontIcon>
+              />
             </TableRowColumn>
             <TableRowColumn>9.8</TableRowColumn>
           </TableRow>

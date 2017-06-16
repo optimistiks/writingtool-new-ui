@@ -5,7 +5,6 @@ import GenericPopover from './GenericPopover'
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
-import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
 import Subheader from 'material-ui/Subheader';
 import Avatar from 'material-ui/Avatar';
@@ -14,6 +13,7 @@ import TextField from 'material-ui/TextField';
 import IconButton from 'material-ui/IconButton';
 import { red400 } from 'material-ui/styles/colors'
 import hipsum from 'lorem-hipsum'
+import MaterialIcon from './MaterialIcon';
 
 export default class WriterProfilePageContainer extends Component {
   constructor (props) {
@@ -45,8 +45,8 @@ WriterProfilePage.contextTypes = {
 function WriterProfilePage (props, context) {
   console.log('mui theme', context.muiTheme)
   const { spacing, zIndex, appBar, palette, toolbar } = context.muiTheme
-  const privateIcon = <FontIcon className='material-icons'>lock_outline</FontIcon>
-  const publicIcon = <FontIcon className='material-icons'>public</FontIcon>
+  const privateIcon = <MaterialIcon glyph="lock_outline" />
+  const publicIcon = <MaterialIcon glyph="public" />
   const paperTopMargin = spacing.desktopGutter + Math.round(150 / 2)
   const PortfolioCard = () => (
     <Card style={{
@@ -80,9 +80,9 @@ function WriterProfilePage (props, context) {
         <Toolbar style={{ justifyContent: 'flex-end', zIndex: zIndex.menu,     position: 'relative' }}>
           <ToolbarGroup lastChild>
             <FlatButton label='Cancel' style={{ whiteSpace: 'nowrap' }} onClick={props.toggleEditing}
-                        icon={<FontIcon className='material-icons'>cancel</FontIcon>}/>
+                        icon={<MaterialIcon glyph="cancel" />}/>
             <FlatButton primary label='Save' style={{ whiteSpace: 'nowrap' }}
-                        icon={<FontIcon className='material-icons'>check_circle</FontIcon>}/>
+                        icon={<MaterialIcon glyph="check_circle" />}/>
           </ToolbarGroup>
         </Toolbar>
         <div style={{ padding: `${spacing.desktopGutter}px`, height: `calc(100vh - ${appBar.height + toolbar.height}px)`, boxSizing: 'border-box', overflowY: 'auto' }}>
@@ -113,7 +113,7 @@ function WriterProfilePage (props, context) {
             </div>
             <div className='col col_no-flex'>
               <FlatButton label='Add item'
-                          icon={<FontIcon className='material-icons'>add_circle_outline</FontIcon>}/>
+                          icon={<MaterialIcon glyph="add_circle_outline" />}/>
             </div>
           </div>
           <div>
@@ -174,7 +174,7 @@ function WriterProfilePage (props, context) {
         </ToolbarGroup>
         <ToolbarGroup lastChild>
           <FlatButton style={{ whiteSpace: 'nowrap' }} label='Edit' onClick={props.toggleEditing}
-                      icon={<FontIcon className='material-icons'>mode_edit</FontIcon>}/>
+                      icon={<MaterialIcon glyph="mode_edit" />}/>
         </ToolbarGroup>
       </Toolbar>
       <div className='row row_no-spacing' style={{ height: `calc(100vh - ${appBar.height + toolbar.height}px)` }}>

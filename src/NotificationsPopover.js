@@ -31,9 +31,9 @@ export default function NotificationsPopover (props, context) {
       anchorOrigin={{ "horizontal": "right", "vertical": "bottom" }}
       targetOrigin={{ "horizontal": "right", "vertical": "top" }}
     >
-      <div>
+      <div style={{ width: '100vw', maxWidth: '350px' }}>
         <div style={{ maxHeight: '300px', overflowY: 'auto' }}>
-          <List style={{ maxWidth: '350px', padding: 0 }}>
+          <List style={{ padding: 0 }}>
             <Subheader>Unread notifications</Subheader>
             <ListItem
               primaryText="Brunch this weekend?"

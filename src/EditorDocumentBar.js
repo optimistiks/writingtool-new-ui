@@ -5,6 +5,7 @@ import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 import hipsum from 'lorem-hipsum';
 import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
+import MaterialIcon from './MaterialIcon'
 
 EditorDocumentBar.propTypes = {
   style: PropTypes.object
@@ -29,7 +30,7 @@ export default function EditorDocumentBar (props, context) {
           label='00:00'
           labelStyle={{ verticalAlign: 'middle' }}
           style={{ whiteSpace: 'nowrap' }}
-          icon={<FontIcon className='material-icons'>play_arrow</FontIcon>}
+          icon={<MaterialIcon glyph='play_arrow' />}
         />
       </ToolbarGroup>
       <ToolbarGroup>
