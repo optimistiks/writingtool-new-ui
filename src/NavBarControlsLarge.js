@@ -6,35 +6,28 @@ import IconMenu from 'material-ui/IconMenu';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton'
-import Menu from 'material-ui/Menu'
+import FlatButton from 'material-ui/FlatButton'
 import HelpIcon from 'material-ui/svg-icons/action/help-outline';
 import GenericPopover from './GenericPopover';
-
+import { List, ListItem } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import Badge from 'material-ui/Badge';
+import Subheader from 'material-ui/Subheader';
+import Avatar from 'material-ui/Avatar';
+import { grey400, darkBlack, lightBlack } from 'material-ui/styles/colors';
 import { Link } from 'react-router-dom'
+import NotificationsPopover from './NotificationsPopover'
 
 NavBarControlsLarge.contextTypes = {
   muiTheme: PropTypes.object.isRequired
 }
 
 export default function NavBarControlsLarge (props, context) {
-  const { appBar } = context.muiTheme
+  const { appBar, spacing } = context.muiTheme
   return (
     <ToolbarGroup style={{ height: `${appBar.height}px` }}>
       <RaisedButton containerElement={<Link to='/editor'/>} label="New Document"/>
-      <GenericPopover
-        buttonElement={<IconButton iconClassName='material-icons'
-                                   iconStyle={{ color: appBar.textColor }}>notifications</IconButton>}
-        anchorOrigin={{ "horizontal": "right", "vertical": "bottom" }}
-        targetOrigin={{ "horizontal": "right", "vertical": "top" }}
-      >
-        <Menu>
-          <MenuItem primaryText="Refresh"/>
-          <MenuItem primaryText="Help &amp; feedback"/>
-          <MenuItem primaryText="Settings"/>
-          <MenuItem primaryText="Sign out"/>
-        </Menu>
-      </GenericPopover>
-
+      <NotificationsPopover />
       <IconButton><HelpIcon color={appBar.textColor} title='Help'/></IconButton>
       <ToolbarSeparator />
       <IconMenu
