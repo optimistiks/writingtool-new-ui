@@ -5,12 +5,9 @@ import Subheader from 'material-ui/Subheader'
 import {
   Table,
   TableBody,
-  TableHeader,
-  TableHeaderColumn,
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import hipsum from 'lorem-hipsum'
 import { red100, purple100, blue100, teal100, lime100, blueGrey100, greenA400 } from 'material-ui/styles/colors'
 import FontIcon from 'material-ui/FontIcon'
 

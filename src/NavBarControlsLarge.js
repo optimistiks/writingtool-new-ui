@@ -6,15 +6,7 @@ import IconMenu from 'material-ui/IconMenu';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconButton from 'material-ui/IconButton';
 import RaisedButton from 'material-ui/RaisedButton'
-import FlatButton from 'material-ui/FlatButton'
 import HelpIcon from 'material-ui/svg-icons/action/help-outline';
-import GenericPopover from './GenericPopover';
-import { List, ListItem } from 'material-ui/List';
-import Divider from 'material-ui/Divider';
-import Badge from 'material-ui/Badge';
-import Subheader from 'material-ui/Subheader';
-import Avatar from 'material-ui/Avatar';
-import { grey400, darkBlack, lightBlack } from 'material-ui/styles/colors';
 import { Link } from 'react-router-dom'
 import NotificationsPopover from './NotificationsPopover'
 
@@ -23,7 +15,7 @@ NavBarControlsLarge.contextTypes = {
 }
 
 export default function NavBarControlsLarge (props, context) {
-  const { appBar, spacing } = context.muiTheme
+  const { appBar } = context.muiTheme
   return (
     <ToolbarGroup style={{ height: `${appBar.height}px` }}>
       <RaisedButton data-walkthrough='walkthroughtest' containerElement={<Link to='/editor'/>} label="New Document"/>

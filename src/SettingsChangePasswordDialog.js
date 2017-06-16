@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import FlatButton from 'material-ui/FlatButton'
-import Subheader from 'material-ui/Subheader'
 import TextField from 'material-ui/TextField'
 import GenericDialog from './GenericDialog'
 

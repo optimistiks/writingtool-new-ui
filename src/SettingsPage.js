@@ -1,20 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
 import FlatButton from 'material-ui/FlatButton';
-import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
 import Subheader from 'material-ui/Subheader';
 import TextField from 'material-ui/TextField';
 import Checkbox from 'material-ui/Checkbox';
-import TasksList from './TasksList';
 
 SettingsPage.contextTypes = {
   muiTheme: PropTypes.object.isRequired

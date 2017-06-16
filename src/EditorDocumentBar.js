@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import FontIcon from 'material-ui/FontIcon';
-import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import Chip from 'material-ui/Chip';
-import { green100 } from 'material-ui/styles/colors'
 import TextField from 'material-ui/TextField';
 import hipsum from 'lorem-hipsum';
-import { Toolbar, ToolbarGroup, ToolbarSeparator } from 'material-ui/Toolbar';
+import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 
 EditorDocumentBar.propTypes = {
   style: PropTypes.object

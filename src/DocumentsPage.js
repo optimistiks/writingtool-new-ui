@@ -4,11 +4,9 @@ import MenuItem from 'material-ui/MenuItem'
 import IconMenu from 'material-ui/IconMenu';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconButton from 'material-ui/IconButton';
-import { Card, CardActions, CardTitle, CardHeader } from 'material-ui/Card';
+import { Card, CardActions, CardHeader } from 'material-ui/Card';
 import EditIcon from 'material-ui/svg-icons/editor/mode-edit';
-import Subheader from 'material-ui/Subheader';
 import FlatButton from 'material-ui/FlatButton';
-import FontIcon from 'material-ui/FontIcon';
 import DocumentsList from './DocumentsList'
 import hipsum from 'lorem-hipsum'
 

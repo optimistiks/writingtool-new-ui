@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import MediaQuery from 'react-responsive'
-import NavBar from './NavBar'
-import NavBarControlsSmall from './NavBarControlsSmall'
-import NavBarControlsLarge from './NavBarControlsLarge'
-import Sidebar from './Sidebar'
-import { SMALL_END, MEDIUM_START } from './mediaQueryBreakpoints'
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
+import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 import GenericPopover from './GenericPopover'
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
@@ -15,16 +9,11 @@ import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
 import Subheader from 'material-ui/Subheader';
 import Avatar from 'material-ui/Avatar';
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
-import Drawer from 'material-ui/Drawer';
+import { Card, CardHeader, CardText } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
-import GenericDialog from './GenericDialog'
 import IconButton from 'material-ui/IconButton';
-import headingBg from './static/heading-bg.jpg'
-import typography from 'material-ui/styles/typography'
 import { red400 } from 'material-ui/styles/colors'
 import hipsum from 'lorem-hipsum'
-import { MEDIUM_END, LARGE_START } from './mediaQueryBreakpoints'
 
 export default class WriterProfilePageContainer extends Component {
   constructor (props) {

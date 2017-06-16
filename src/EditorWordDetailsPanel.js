@@ -1,18 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Paper from 'material-ui/Paper'
-import FlatButton from 'material-ui/FlatButton'
-import Chip from 'material-ui/Chip'
 import { Tabs, Tab } from 'material-ui/Tabs';
 import { grey200 } from 'material-ui/styles/colors'
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Subheader from 'material-ui/Subheader'
