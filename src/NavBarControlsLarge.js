@@ -26,7 +26,7 @@ export default function NavBarControlsLarge (props, context) {
   const { appBar, spacing } = context.muiTheme
   return (
     <ToolbarGroup style={{ height: `${appBar.height}px` }}>
-      <RaisedButton containerElement={<Link to='/editor'/>} label="New Document"/>
+      <RaisedButton data-walkthrough='walkthroughtest' containerElement={<Link to='/editor'/>} label="New Document"/>
       <NotificationsPopover />
       <IconButton><HelpIcon color={appBar.textColor} title='Help'/></IconButton>
       <ToolbarSeparator />

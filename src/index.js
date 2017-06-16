@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import 'normalize.css/normalize.css'
 import '@material/typography/dist/mdc.typography.css'
 import 'flexboxgrid/dist/flexboxgrid.css'
+import 'react-joyride/lib/react-joyride-compiled.css'
 import './index.css';
 
 injectTapEventPlugin()
