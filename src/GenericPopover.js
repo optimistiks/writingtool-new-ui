@@ -5,7 +5,14 @@ import Popover from 'material-ui/Popover';
 export default class GenericPopover extends React.Component {
   static propTypes = {
     children: PropTypes.element.isRequired,
-    buttonElement: PropTypes.element.isRequired
+    buttonElement: PropTypes.element.isRequired,
+    anchorOrigin: PropTypes.object,
+    targetOrigin: PropTypes.object
+  }
+
+  static defaultProps = {
+    anchorOrigin: { horizontal: 'left', vertical: 'bottom' },
+    targetOrigin: { horizontal: 'left', vertical: 'top' }
   }
 
   constructor (props) {
@@ -32,7 +39,7 @@ export default class GenericPopover extends React.Component {
   };
 
   render () {
-    const { buttonElement, children } = this.props
+    const { buttonElement, children, anchorOrigin, targetOrigin } = this.props
     return (
       <div>
         {React.cloneElement(buttonElement, {
@@ -41,8 +48,8 @@ export default class GenericPopover extends React.Component {
         <Popover
           open={this.state.open}
           anchorEl={this.state.anchorEl}
-          anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
-          targetOrigin={{ horizontal: 'left', vertical: 'top' }}
+          anchorOrigin={anchorOrigin}
+          targetOrigin={targetOrigin}
           onRequestClose={this.handleRequestClose}
         >
           {children}
